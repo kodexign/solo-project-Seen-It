@@ -38,6 +38,7 @@ function LoginForm() {
           <input
             type="text"
             name="username"
+            placeholder='email'
             required
             value={username}
             onChange={(event) => setUsername(event.target.value)}
@@ -49,6 +50,7 @@ function LoginForm() {
           Password:
           <input
             type="password"
+            placeholder='password'
             name="password"
             required
             value={password}
