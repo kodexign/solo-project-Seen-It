@@ -5,14 +5,25 @@ import { useSelector, useDispatch } from 'react-redux';
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
 function AddNewMediaForm() {
+    const dispatch = useDispatch();
+    const [addNewMedia, setAddNewMedia] = useState('');
     const [selectMedia, setSelectMedia]= useState('select');
 
     const mediaCheck = (event) => {
         setSelectMedia(event.target.value);
     };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'ADD_NEW_MEDIA',
+            payload:addNewMedia
+        });
+        setAddNewMedia('');
+    };
+
 
     return (
-        <form className="formPanel">
+        <form className="formPanel" onSubmit={handleSubmit}>
             <h2>Add New Media Form</h2>
             {/* {errors.registrationMessage && (
           <h3 className="alert" role="alert">

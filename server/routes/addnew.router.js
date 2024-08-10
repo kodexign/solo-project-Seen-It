@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 /**
  * POST route template
  */
-router.post('/', (req, res) => {
+router.post('/media', (req, res) => {
   const title= req.body.title;
   const movie = req.body.movie;
   const seasonNum = req.body.seasonNum;
