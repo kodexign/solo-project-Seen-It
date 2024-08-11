@@ -41,9 +41,18 @@ function Nav() {
             <Link className="navLink" to="/moviespage">
               Movies
             </Link>
+    
+
+            <div className="dropdown">
             <Link className="navLink" to="tvshowspage">
-              TV Shows
-            </Link>
+              <button className="dropbtn">TV Shows</button>
+              </Link>
+              <div className="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div>
 
 
             <LogOutButton className="navLink" />
