@@ -31,10 +31,20 @@ function Nav() {
             <Link className="navLink" to="/info">
               Info Page
             </Link>
-            
+
             <Link className="navLink" to="/addnewmediaform">
               Add New
             </Link>
+            <Link className="navLink" to="/dashboard">
+              Dashboard
+            </Link>
+            <Link className="navLink" to="/moviespage">
+              Movies
+            </Link>
+            <Link className="navLink" to="tvshowspage">
+              TV Shows
+            </Link>
+
 
             <LogOutButton className="navLink" />
           </>

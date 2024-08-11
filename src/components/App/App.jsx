@@ -20,6 +20,17 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddNewMediaForm from '../AddNewMediaForm/AddNewMediaForm';
+import Dashboard from '../Dashboard/Dashboard';
+import MoviesPage from '../MoviesPage/MoviesPage';
+import TVShowsPage from '../TVShowsPage/TVShowsPage';
+import CompletedMoviesPage from '../CompletedPage/CompletedMoviesPage';
+import CompletedShowsPage from '../CompletedPage/CompletedShowsPage';
+import CurrentlyWatchingMoviesPage from '../CurrentlyWatching/CurrentlyWatchingMoviesPage';
+import CurrentlyWatchingShowsPage from '../CurrentlyWatching/CurrentlyWatchingShowsPage';
+import ToWatchMoviesPage from '../ToWatchPage/ToWatchMoviesPage';
+import ToWatchShowsPage from '../ToWatchPage/ToWatchShowsPage';
+import DidNotFinishMoviesPage from '../DidNotFinishPage/DidNotFinishMoviesPage';
+import DidNotFinishShowsPage from '../DidNotFinishPage/DidNotFinishShowsPage';
 
 import './App.css';
 
@@ -69,12 +80,80 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/addnewmediaform"
+          <ProtectedRoute // logged in shows ADD NEW MEDIA FORM
+            exact path="/addnewmediaform"
           >
             <AddNewMediaForm />
+
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows DASHBOARD
+            exact path="/dashboard"
+          >
+            <Dashboard />
+          </ProtectedRoute>
+  
+  {/* MOVIE PATHS */}
+          <ProtectedRoute // logged in shows MOVIES PAGE
+            exact path="/moviespage"
+          >
+            <MoviesPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows COMPLETED MOVIES PAGE
+            exact path="/completed-movies"
+          >
+            <CompletedMoviesPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows CURRENTLY WATCHING MOVIES PAGE
+            exact path="/currently-watching-movies"
+          >
+            <CurrentlyWatchingMoviesPage/>
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows TO WATCH MOVIES PAGE
+            exact path="/to-watch-movies"
+          >
+            <ToWatchMoviesPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows DID NOT FINISH MOVIES PAGE
+            exact path="/did-not-finish-movies"
+          >
+            <DidNotFinishMoviesPage />
+          </ProtectedRoute>
+
+  {/* TV SHOW PATHS */}
+  
+          <ProtectedRoute // logged in shows COMPLETED SHOWS PAGE
+            exact path="/tvshowspage"
+          >
+            <TVShowsPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows COMPLETED SHOWS PAGE
+            exact path="/completed-shows"
+          >
+            <CompletedShowsPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows CURRENTLY WATCHING SHOWS PAGE
+            exact path="/currently-watching-shows"
+          >
+            <CurrentlyWatchingShowsPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows TO WATCH SHOWS PAGE
+            exact path="/to-watch-shows"
+          >
+            <ToWatchShowsPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute // logged in shows DID NOT FINISH SHOWS PAGE
+            exact path="/did-not-finish-shows"
+          >
+            <DidNotFinishShowsPage />
           </ProtectedRoute>
 
           <Route

@@ -4,14 +4,14 @@ import React from 'react';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is'
 
-function MoviesPage() {
+function CurrentlyWatchingShowsPage() {
   return (
     <div className="container">
       <div>
-        <p>MoviesPage</p>
+        <p>CurrentlyWatchingShowsPage</p>
       </div>
     </div>
   );
 }
 
-export default MoviesPage;
+export default CurrentlyWatchingShowsPage;
