@@ -6,7 +6,7 @@ const router = express.Router();
  * GET route template
  */
 router.get('/completed-shows', (req, res) => {
-  // GET route code here
+
 });
 
 router.get('/current-watching-shows', (req, res) => {
