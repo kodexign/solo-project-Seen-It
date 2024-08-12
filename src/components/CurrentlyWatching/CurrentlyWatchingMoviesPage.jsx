@@ -5,6 +5,7 @@ import React from 'react';
 // or even care what the redux state is'
 
 function CurrentlyWatchingMoviesPage() {
+  
   return (
     <div className="container">
       <div>

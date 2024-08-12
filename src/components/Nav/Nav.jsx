@@ -41,6 +41,7 @@ function Nav() {
             <Link className="navLink" to="/moviespage">
               Movies
             </Link>
+
     
 
             <div className="dropdown">
@@ -48,7 +49,9 @@ function Nav() {
               <button className="dropbtn">TV Shows</button>
               </Link>
               <div className="dropdown-content">
-                <a href="#">Link 1</a>
+                <Link className="navLink" to="/completed-movies">
+              Movies
+            </Link>
                 <a href="#">Link 2</a>
                 <a href="#">Link 3</a>
               </div>
