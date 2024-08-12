@@ -1,16 +1,39 @@
-import React from 'react';
-// This is one of our simplest components
-// It doesn't have local state,
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import './DidNotFinishPage.css';
+import { useHistory } from 'react-router-dom';
 
 function DidNotFinishMoviesPage() {
+
+  const dispatch = useDispatch();
+  const movies = useSelector(store => store.mediaReducer);
+  const history = useHistory();
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_DNF_MOVIES' }); // type is from movies.saga.js
+  }, []);
+  // const handleClick = (id) => {
+  //   history.push(`/details/${id}`);
+  // };
+
   return (
+    <main>
     <div className="container">
       <div>
-        <p>DidNotFinishMoviesPage</p>
+        <h2>Did Not Finish Movies List</h2>
       </div>
+      <section className="movies">
+        {movies.map(movie => {
+          return (
+            <div data-testid='movieItem' key={movie.id}>
+              <p>{movie.title}</p>
+            </div>
+          );
+        })}
+      </section>
+
     </div>
+    </main>
   );
 }
 
