@@ -2,8 +2,6 @@ const addNewReducer = (state = [], action) => {
     switch (action.type) {
       case 'ADD_NEW_MEDIA':
         return action.payload;
-      case 'UNSET_USER':
-        return {};
       default:
         return state;
     }
