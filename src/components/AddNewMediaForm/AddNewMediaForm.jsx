@@ -1,35 +1,66 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
 function AddNewMediaForm() {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
+
+  
     const [addNewMedia, setAddNewMedia] = useState('');
     const [selectMedia, setSelectMedia]= useState('select');
+    // const newMedia = useSelector ((store) => store.addNewMedia); 
 
     const mediaCheck = (event) => {
         setSelectMedia(event.target.value);
     };
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        dispatch({
-            type: 'ADD_NEW_MEDIA',
-            payload:addNewMedia
-        });
-        setAddNewMedia('');
-    };
 
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+
+    //     setAddNewMedia('');
+    // };
+
+    const [formData, setFormData] = useState({
+        title: '',
+        movie: false,
+        seasonNum: '',
+        numOfEps: '',
+        platform: '',
+        status: '',
+      });
+    
+      const handleChange = (event) => {
+        setFormData({ ...formData, [event.target.name]: event.target.value });
+      };
+    
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+    
+        try {
+          const response = await   
+     axios.post('/api/media/add-new', formData);
+          console.log('Media added Successfully', response.data);
+          // Handle success, e.g., clear form, show success message
+          setFormData({
+            title: '',
+            movie: false,
+            seasonNum: '',
+            numOfEps: '',
+            platform: '',
+            status: '',
+          });
+        } catch (error) {
+          console.error('Error adding media:', error);
+          // Handle error, e.g., show error message
+        }
+      };
 
     return (
         <form className="formPanel" onSubmit={handleSubmit}>
             <h2>Add New Media Form</h2>
-            {/* {errors.registrationMessage && (
-          <h3 className="alert" role="alert">
-            {errors.registrationMessage}
-          </h3>
-        )} */}
             <div>
                 <label htmlFor="title">
                     <input
@@ -56,7 +87,7 @@ function AddNewMediaForm() {
                         type="text"
                         name="seasonNumber"
                         placeholder='Season Number'
-                        required
+
                     />
                 </label>
                 <label htmlFor="numOfEps">
@@ -64,7 +95,7 @@ function AddNewMediaForm() {
                         type="text"
                         name="numOfEps"
                         placeholder='Num of Eps in Season'
-                        required
+                       
                     />
                 </label>
             </div>
@@ -73,7 +104,7 @@ function AddNewMediaForm() {
                 <label htmlFor="platform">
                     <input
                         type="text"
-                        name="password"
+                        name="platform"
                         placeholder='platform: where are you watching it'
 
                     />
@@ -81,10 +112,10 @@ function AddNewMediaForm() {
             </div>
             <div>
                 <select className='statusList'>
-                    <option> Courrently Watching </option>
-                    <option> Completed</option>
-                    <option> To Watch </option>
-                    <option> Did Not Finish</option>
+                    <option> currently watching </option>
+                    <option> completed</option>
+                    <option> to watch </option>
+                    <option> did not finish</option>
                 </select>
 
             </div>

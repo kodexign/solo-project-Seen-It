@@ -1,17 +1,19 @@
-import { put, takeLatest } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
 
-function* addNewSaga(action) {
+function* addNew(action) {
   try {
-
-    yield put({ type: 'ADD_NEW_MEDIA' });
     yield axios.post('/api/media', action.payload);
+    yield put({ type: 'ADD_NEW_MEDIA'});
+    
 
   } catch (error) {
-    console.log('Error Adding New Media Saga:', error);
+    console.log('Error Adding New Media:', error);
   }
 }
 
-
+function* addNewSaga() {
+    yield takeEvery('ADD_NEW', addNew);
+  }
 export default addNewSaga;

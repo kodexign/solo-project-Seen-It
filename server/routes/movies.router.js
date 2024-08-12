@@ -5,7 +5,7 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/completed/movies', (req, res) => {
+router.get('/completed-movies', (req, res) => {
   // GET route code here
   const queryText = `
   SELECT media.title, media.platform 
@@ -24,7 +24,7 @@ pool.query(queryText)
   })
 });
 
-router.get('/current/watching/movies', (req, res) => {
+router.get('/currently-watching-movies', (req, res) => {
   const queryText = `
   SELECT media.title, media.platform 
   FROM media
@@ -41,7 +41,7 @@ pool.query(queryText)
   })
   });
 
-router.get('/to/watch/movies', (req, res) => {
+router.get('/to-watch-movies', (req, res) => {
   const queryText = `
   SELECT media.title, media.platform 
   FROM media
@@ -59,7 +59,7 @@ pool.query(queryText)
   })
   });
 
-router.get('/dnf/movies', (req, res) => {
+router.get('/dnf-movies', (req, res) => {
   const queryText = `
   SELECT media.title, media.platform 
   FROM media
