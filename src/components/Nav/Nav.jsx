@@ -38,22 +38,44 @@ function Nav() {
             <Link className="navLink" to="/dashboard">
               Dashboard
             </Link>
-            <Link className="navLink" to="/moviespage">
-              Movies
-            </Link>
-
-    
 
             <div className="dropdown">
             <Link className="navLink" to="tvshowspage">
               <button className="dropbtn">TV Shows</button>
               </Link>
               <div className="dropdown-content">
-                <Link className="navLink" to="/completed-movies">
-              Movies
+                <Link className="navLink" to="/completed-shows">
+              Completed
             </Link>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+            <Link className="navLink" to="/currently-watching-shows">
+              Currently Watching
+            </Link>
+            <Link className="navLink" to="/to-watch-shows">
+              To Watch
+            </Link>
+            <Link className="navLink" to="/did-not-finish-shows">
+              Did Not Finish
+            </Link>
+              </div>
+            </div>
+
+            <div className="dropdown">
+            <Link className="navLink" to="/moviespage">
+              <button className="dropbtn">Movies</button>
+              </Link>
+              <div className="dropdown-content">
+                <Link className="navLink" to="/completed-movies">
+              Completed
+            </Link>
+            <Link className="navLink" to="/currently-watching-movies">
+              Currently Watching
+            </Link>
+            <Link className="navLink" to="/to-watch-movies">
+              To Watch
+            </Link>
+            <Link className="navLink" to="/did-not-finish-movies">
+              Did Not Finish
+            </Link>
               </div>
             </div>
 
