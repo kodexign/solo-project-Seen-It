@@ -27,6 +27,12 @@ function ToWatchMoviesPage() {
           return (
             <div data-testid='movieItem' key={movie.id}>
               <p>{movie.title}</p>
+              <div className='statusChangeButtons'>
+                <button> Delete </button>
+                <button> Currently Watching</button>
+                <button> Completed </button>
+                <button> DNF </button>
+                </div>
             </div>
           );
         })}
