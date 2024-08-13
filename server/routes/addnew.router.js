@@ -10,10 +10,8 @@ router.get('/', (req, res) => {
   res.send(req.body);
 });
 
-/**
- * POST route template
- */
 router.post('/add-new', (req, res) => {
+  console.log( 'router post', req.body);
   const { title, movie, seasonNum, numOfEps, platform, status } = req.body;
   const queryText = `INSERT INTO "media" ( title, movie, season_number, number_of_episodes, platform, status_id)
     VALUES ($1, $2, $3, $4, $5, $6) `;

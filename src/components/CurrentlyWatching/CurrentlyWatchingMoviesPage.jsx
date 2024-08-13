@@ -13,7 +13,7 @@ function CurrentlyWatchingMoviesPage() {
     dispatch({ type: 'FETCH_CURRENT_MOVIES' }); // type is from movies.saga.js
   }, []);
   const handleComplete = (id) => {
-    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED' });
+    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED'});
   };
 
   return (
