@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function* addNew(action) {
   try {
-    yield axios.post('/api/media', action.payload);
+    yield axios.post('/api/media/add-new', action.payload);
     yield put({ type: 'ADD_NEW_MEDIA'});
     
 

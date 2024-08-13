@@ -3,8 +3,8 @@ const addNewReducer = (state = [], action) => {
       case 'ADD_NEW_MEDIA':
         return action.payload;
       default:
-        return state;
-    }
+        return { ...state};
+    } 
   };
   
   // user will be on the redux state at:

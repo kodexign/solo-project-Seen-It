@@ -2,61 +2,35 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
-// Basic functional component structure for React with default state
-// value setup. When making a new component be sure to replace the
-// component name TemplateFunction with the name for the new component.
 function AddNewMediaForm() {
-    // const dispatch = useDispatch();
-
-  
-    const [addNewMedia, setAddNewMedia] = useState('');
-    const [selectMedia, setSelectMedia]= useState('select');
-    // const newMedia = useSelector ((store) => store.addNewMedia); 
-
-    const mediaCheck = (event) => {
-        setSelectMedia(event.target.value);
-    };
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-
-    //     setAddNewMedia('');
-    // };
-
+    const dispatch = useDispatch();
+    const [addNewMedia, setAddNewMedia] = useState(''); 
+    const [selectMedia, setSelectMedia]= useState(''); //used with rendering additional TV Show input fields
+    
     const [formData, setFormData] = useState({
         title: '',
-        movie: false,
+        movie: true,
         seasonNum: '',
         numOfEps: '',
         platform: '',
         status: '',
-      });
+      }); //have a feeling i might need this, but if i'm using SAGA do I need it still?
     
-      const handleChange = (event) => {
-        setFormData({ ...formData, [event.target.name]: event.target.value });
-      };
-    
-      const handleSubmit = async (event) => {
+
+    const newMedia = useSelector ((store) => store.addNewReducer); 
+
+    //checks media type, if TV Show, will render seasonNum and numOfEps input field
+    const mediaCheck = (event) => {
+        setSelectMedia(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
         event.preventDefault();
+        dispatch({ type: 'ADD_NEW_MEDIA' });
+        setAddNewMedia('');
+    };
     
-        try {
-          const response = await   
-     axios.post('/api/media/add-new', formData);
-          console.log('Media added Successfully', response.data);
-          // Handle success, e.g., clear form, show success message
-          setFormData({
-            title: '',
-            movie: false,
-            seasonNum: '',
-            numOfEps: '',
-            platform: '',
-            status: '',
-          });
-        } catch (error) {
-          console.error('Error adding media:', error);
-          // Handle error, e.g., show error message
-        }
-      };
+
 
     return (
         <form className="formPanel" onSubmit={handleSubmit}>
