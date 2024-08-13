@@ -12,9 +12,9 @@ function CurrentlyWatchingMoviesPage() {
   useEffect(() => {
     dispatch({ type: 'FETCH_CURRENT_MOVIES' }); // type is from movies.saga.js
   }, []);
-  // const handleClick = (id) => {
-  //   history.push(`/details/${id}`);
-  // };
+  const handleComplete = (id) => {
+    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED' });
+  };
 
   return (
     <main>
@@ -29,8 +29,8 @@ function CurrentlyWatchingMoviesPage() {
               <p>{movie.title}</p>
               <div className='statusChangeButtons'>
                 <button> Delete </button>
-                <button> Currently Watching</button>
-                <button> Completed </button>
+                <button> To Watch</button>
+                <button onClick={handleComplete}> Completed </button>
                 <button> DNF </button>
                 </div>
             </div>

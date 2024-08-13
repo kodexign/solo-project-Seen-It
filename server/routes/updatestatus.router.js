@@ -4,12 +4,16 @@ const router = express.Router();
 
 //Update movie status to complete
 router.put('/:id/update-status-to-completed', (req, res) => {
-    const queryText = `
-    UPDATE media
-    SET status_id = (SELECT id FROM status WHERE status_type = 'completed')
-    WHERE id = :id
-    `;
-  pool.query(queryText)
+    const { id } = req.params;
+    const completedStatusId = 1; // Replace with the actual ID of the 'completed' status
+
+      const queryText = `
+        UPDATE media
+        SET status_id = (SELECT id FROM status WHERE "type" = 'completed')
+        WHERE id = $2
+      `;
+      const values = [completedStatusId, id];
+  pool.query(queryText, values)
     .then(result => {
       res.send(result.rows);
     })
