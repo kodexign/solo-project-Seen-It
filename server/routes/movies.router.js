@@ -2,11 +2,8 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
+// GET movies with Status of Completed
 router.get('/completed-movies', (req, res) => {
-  // GET route code here
   const queryText = `
   SELECT media.title, media.platform 
   FROM media
@@ -24,6 +21,7 @@ pool.query(queryText)
   })
 });
 
+// GET movies with status of currently watching
 router.get('/currently-watching-movies', (req, res) => {
   const queryText = `
   SELECT media.title, media.platform 
@@ -41,6 +39,7 @@ pool.query(queryText)
   })
   });
 
+  //GET movies with status of to watch
 router.get('/to-watch-movies', (req, res) => {
   const queryText = `
   SELECT media.title, media.platform 
@@ -59,6 +58,7 @@ pool.query(queryText)
   })
   });
 
+//GET movies with status of did not finish
 router.get('/dnf-movies', (req, res) => {
   const queryText = `
   SELECT media.title, media.platform 
@@ -77,5 +77,7 @@ pool.query(queryText)
   })
   });
 
+  
+  
 
 module.exports = router;

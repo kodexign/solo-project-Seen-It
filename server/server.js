@@ -12,7 +12,7 @@ const userRouter = require('./routes/user.router');
 const addNewRouter = require('./routes/addnew.router');
 const moviesRouter = require('./routes/movies.router');
 const showsRouter = require('./routes/shows.router');
-
+const updateStatusRouter = require ('./routes/updatestatus.router');
 
 // Express Middleware
 app.use(express.json());
@@ -28,7 +28,7 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/user', userRouter);
-app.use('/api/media', addNewRouter, moviesRouter, showsRouter);
+app.use('/api/media', addNewRouter, moviesRouter, showsRouter, updateStatusRouter);
 
 // Listen Server & Port
 app.listen(PORT, () => {
