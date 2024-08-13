@@ -14,7 +14,7 @@ function AddNewMediaForm() {
         numOfEps: '',
         platform: '',
         status: '',
-      }); //have a feeling i might need this, but if i'm using SAGA do I need it still?
+      }); //have a feeling i might need this, but if i'm using redux-SAGA do I need it still?
     
 
     const newMedia = useSelector ((store) => store.addNewReducer); 
@@ -26,7 +26,7 @@ function AddNewMediaForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatch({ type: 'ADD_NEW_MEDIA' });
+        dispatch({ type: 'ADD_NEW' });
         setAddNewMedia('');
     };
     
@@ -79,7 +79,7 @@ function AddNewMediaForm() {
                     <input
                         type="text"
                         name="platform"
-                        placeholder='platform: where are you watching it'
+                        placeholder='platform: where?'
 
                     />
                 </label>
