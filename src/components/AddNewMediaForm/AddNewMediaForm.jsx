@@ -13,7 +13,7 @@ function AddNewMediaForm() {
 
     
     const [selectMedia, setSelectMedia]= useState(''); //used with rendering additional TV Show input fields
-    const statuses = useSelector((store) => store.addNewReducer); 
+    const statuses = useSelector((store) => store.getStatusesReducer); 
     console.log ('statuses array:',statuses);
 
     useEffect(() => {

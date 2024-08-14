@@ -4,7 +4,7 @@ import axios from 'axios';
 function* fetchStatuses() {
   try {
     const statusResponse = yield axios.get('/api/media/get-all-status');
-    yield put({ type: 'FETCH_ALL_STATUSES', payload: statusResponse.data}); //from reducer
+    yield put({ type: 'SET_ALL_STATUSES', payload: statusResponse.data}); //from reducer
     
 
   } catch (error) {
