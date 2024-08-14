@@ -4,10 +4,17 @@ import axios from 'axios';
 
 function AddNewMediaForm() {
     const dispatch = useDispatch();
-    const [addNewMedia, setAddNewMedia] = useState(); 
+    const [title, setTitle] = useState('');
+    const [movie, setMovie] = useState(true);
+    const [seasonNum, setSeasonNum] = useState(null);
+    const [numOfEps, setNumOfEps] = useState(null);
+    const [platform, setPlatform] = useState('');
+    const [status, setStatus] = useState('');
+
+    
     const [selectMedia, setSelectMedia]= useState(''); //used with rendering additional TV Show input fields
-    const statuses = useSelector ((store) => store.addNewReducer); 
-    console.log ('statuses',statuses);
+    const statuses = useSelector((store) => store.addNewReducer); 
+    console.log ('statuses array:',statuses);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_STATUSES' }); //from rootSaga
@@ -20,8 +27,22 @@ function AddNewMediaForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatch({ type: 'ADD_NEW'});
-        setAddNewMedia(''); // clears input form
+    const newMedia = {
+        title: title,
+        movie: movie,
+        seasonNum: seasonNum,
+        numOfEps: numOfEps,
+        platform: platform,
+        status: status,
+
+    }
+        dispatch({ type: 'ADD_NEW', payload: newMedia});
+        setTitle('');
+        setMovie('');
+        setSeasonNum('');
+        setNumOfEps('');
+        setPlatform('');
+        setStatus(''); // clears input form
     };
     
 
@@ -79,7 +100,7 @@ function AddNewMediaForm() {
                 </label>
             </div>
             <div>
-                <select className='statusList'>
+                <select className='statusList' >
                     {statuses.map(status => {
                         return(
                             <option key={status.id}> {status.type}</option>
