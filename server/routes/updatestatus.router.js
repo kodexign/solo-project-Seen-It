@@ -3,12 +3,14 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 //Update movie status to complete
-router.put('/:id/update-status-to-completed', (req, res) => {
+router.put('/update-status-to-completed/:id', (req, res) => {
     const { id } = req.params;
     const completedStatusId = 1; // id for completed status_type
 
       const queryText = `
-       
+      UPDATE media
+      SET status_id = $1
+      WHERE id = $2  
       `;
       const values = [completedStatusId, id];
   pool.query(queryText, values)

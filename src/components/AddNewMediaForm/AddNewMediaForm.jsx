@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 
 function AddNewMediaForm() {
     const dispatch = useDispatch();
@@ -12,22 +11,24 @@ function AddNewMediaForm() {
     const [status, setStatus] = useState('');
 
     
-    const [selectMedia, setSelectMedia]= useState(''); //used with rendering additional TV Show input fields
+    
     const statuses = useSelector((store) => store.getStatusesReducer); 
     console.log ('statuses array:',statuses);
-
+//automatically populate status in status drop down
     useEffect(() => {
         dispatch({ type: 'FETCH_STATUSES' }); //from rootSaga
       }, []);
 
     //checks media type, if TV Show, will render seasonNum and numOfEps input field
+    const [selectMedia, setSelectMedia]= useState(''); //used with rendering additional TV Show input fields
     const mediaCheck = (event) => {
         setSelectMedia(event.target.value);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-    const newMedia = {
+    
+        const newMedia = {
         title: title,
         movie: movie,
         seasonNum: seasonNum,
@@ -38,9 +39,9 @@ function AddNewMediaForm() {
     }
         dispatch({ type: 'ADD_NEW', payload: newMedia});
         setTitle('');
-        setMovie('');
-        setSeasonNum('');
-        setNumOfEps('');
+        setMovie(true);
+        setSeasonNum(null);
+        setNumOfEps(null);
         setPlatform('');
         setStatus(''); // clears input form
     };

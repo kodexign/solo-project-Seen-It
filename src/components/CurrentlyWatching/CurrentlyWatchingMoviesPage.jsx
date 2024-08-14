@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './CurrentlyWatchingPage.css';
 import { useHistory } from 'react-router-dom';
@@ -8,12 +8,14 @@ function CurrentlyWatchingMoviesPage() {
   const dispatch = useDispatch();
   const movies = useSelector(store => store.mediaReducer);
   const history = useHistory();
+  
+  const completed = useState('completed');
 
   useEffect(() => {
     dispatch({ type: 'FETCH_CURRENT_MOVIES' }); // type is from movies.saga.js
   }, []);
   const handleComplete = (id) => {
-    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED'});
+    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: completed});
   };
 
   return (
