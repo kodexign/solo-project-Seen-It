@@ -2,14 +2,25 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
-router.get('/', (req, res) => {
-  // GET route code here
-  res.send(req.body);
+//GET all status
+router.get('/get-all-status', (req, res) => {
+  const queryText = `
+  SELECT "type"
+  FROM status; 
+  `;
+  
+  pool.query(queryText)
+  .then(result => {
+    res.send(result.rows);
+  })
+  .catch(err => {
+    console.log('ERROR: Get all status', err);
+    res.sendStatus(500)
+  })
 });
 
+
+//  maybe split
 router.post('/add-new', (req, res) => {
   console.log( 'router post', req.body);
   const { title, movie, seasonNum, numOfEps, platform, status } = req.body;

@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
 function AddNewMediaForm() {
     const dispatch = useDispatch();
-    const [addNewMedia, setAddNewMedia] = useState(''); 
+    const [addNewMedia, setAddNewMedia] = useState(); 
     const [selectMedia, setSelectMedia]= useState(''); //used with rendering additional TV Show input fields
-    
-    const [formData, setFormData] = useState({
-        title: '',
-        movie: true,
-        seasonNum: '',
-        numOfEps: '',
-        platform: '',
-        status: '',
-      }); //have a feeling i might need this, but if i'm using redux-SAGA do I need it still?
-    
+    const statuses = useSelector ((store) => store.addNewReducer); 
+    console.log ('statuses',statuses);
 
-    const newMedia = useSelector ((store) => store.addNewReducer); 
+    useEffect(() => {
+        dispatch({ type: 'FETCH_STATUSES' }); //from rootSaga
+      }, []);
 
     //checks media type, if TV Show, will render seasonNum and numOfEps input field
     const mediaCheck = (event) => {
@@ -26,8 +20,8 @@ function AddNewMediaForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatch({ type: 'ADD_NEW' });
-        setAddNewMedia('');
+        dispatch({ type: 'ADD_NEW'});
+        setAddNewMedia(''); // clears input form
     };
     
 
@@ -86,11 +80,12 @@ function AddNewMediaForm() {
             </div>
             <div>
                 <select className='statusList'>
-                    <option> currently watching </option>
-                    <option> completed</option>
-                    <option> to watch </option>
-                    <option> did not finish</option>
-                </select>
+                    {statuses.map(status => {
+                        return(
+                            <option key={status.id}> {status.type}</option>
+                        );          
+                    })}
+                 </select>   
 
             </div>
             <div>
