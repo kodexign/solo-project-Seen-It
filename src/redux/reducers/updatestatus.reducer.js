@@ -1,4 +1,8 @@
-const updateStatusReducer = (state = [], action) => {
+
+
+const initialState = {};
+
+const updateStatusReducer = (state = initialState, action) => {
     switch (action.type) {
     case 'SET_STATUS_COMPLETED':
         return action.payload;
@@ -9,7 +13,7 @@ const updateStatusReducer = (state = [], action) => {
     case 'SET_STATUS_DNF':
         return action.payload;
     default:
-        return { ...state};
+        return state;
     } 
   };
   

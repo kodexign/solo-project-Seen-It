@@ -4,7 +4,8 @@ import axios from 'axios';
 
 function* updateStatusToCompleted(action) {
   try {
-    yield axios.put('/update-status-to-completed/:id', action.payload);
+    const { id } =action.payload;
+    yield axios.put(`/update-status-to-completed/${id}`);
     yield put({ type: 'SET_STATUS_COMPLETED'}); //from reducer
     
 
