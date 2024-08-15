@@ -12,7 +12,7 @@ router.put('/update-status-to-completed/:id', (req, res) => {
       `;
 
       const completedStatusId = 1; // id for completed status_type
-      
+
       const values = [completedStatusId, id];
   pool.query(queryText, values)
     .then(result => {
@@ -24,4 +24,18 @@ router.put('/update-status-to-completed/:id', (req, res) => {
     })
     
 });
+
+router.delete('/:id', (req, res) => {
+  let { id } = req.params;
+  const sqlText = `DELETE FROM "media" WHERE "id" = $1;`;
+  pool.query(sqlText, [id])
+      .then((result) => {
+          console.log(`Got stuff back from the database`, result);
+          res.sendStatus(201);
+      })
+      .catch((error) => {
+          console.log(`Error making database query ${sqlText}`, error);
+          res.sendStatus(500); // Good server always responds
+      })
+})
 module.exports = router;
