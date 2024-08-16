@@ -5,7 +5,7 @@ const router = express.Router();
 // GET movies with Status of Completed
 router.get('/completed-movies', (req, res) => {
   const queryText = `
-  SELECT media.title, media.platform 
+  SELECT media.id, media.title, media.platform 
   FROM media
   JOIN status ON media.status_id = status.id
   WHERE media.movie = true AND status.type = 'completed' 
@@ -24,7 +24,7 @@ pool.query(queryText)
 // GET movies with status of currently watching
 router.get('/currently-watching-movies', (req, res) => {
   const queryText = `
-  SELECT media.title, media.platform 
+  SELECT media.id, media.title, media.platform 
   FROM media
   JOIN status ON media.status_id = status.id
   WHERE media.movie = true and status.type = 'currently_watching';
@@ -42,7 +42,7 @@ pool.query(queryText)
   //GET movies with status of to watch
 router.get('/to-watch-movies', (req, res) => {
   const queryText = `
-  SELECT media.title, media.platform 
+  SELECT media.id, media.title, media.platform 
   FROM media
   JOIN status ON media.status_id = status.id
   WHERE media.movie = true and  status.type = 'to_watch'
@@ -61,7 +61,7 @@ pool.query(queryText)
 //GET movies with status of did not finish
 router.get('/dnf-movies', (req, res) => {
   const queryText = `
-  SELECT media.title, media.platform 
+  SELECT media.id, media.title, media.platform 
   FROM media
   JOIN status ON media.status_id = status.id
   WHERE media.movie = true and  status.type = 'did_not_finish'

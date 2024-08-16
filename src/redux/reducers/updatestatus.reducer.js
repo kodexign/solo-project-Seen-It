@@ -12,7 +12,7 @@ const updateStatusReducer = (state = [], action) => {
     case 'SET_STATUS_DNF':
         return action.payload;
     case 'SET_DELETE_MEDIA':
-        return state.filter(media => media.id !== action.payload)
+        return action.payload;
     default:
         return state;
     } 
