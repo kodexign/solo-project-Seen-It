@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './CompletedPage.css';
 import { useHistory } from 'react-router-dom';
@@ -7,13 +7,17 @@ function CompletedMoviesPage() {
 
   const dispatch = useDispatch();
   const movies = useSelector(store => store.mediaReducer);
+
+  const [completed, setComplete] = useState();
+  const [dnf, setDnf] = useState();
+
   const history = useHistory();
 
   useEffect(() => {
     dispatch({ type: 'FETCH_COMPLETED_MOVIES' });
   }, []);
-  // const handleClick = (id) => {
-  //   history.push(`/details/${id}`);
+  // const handleCurrentlyWatching = (id) => {
+  //   dispatch({type: ""})
   // };
 
   return (
@@ -31,7 +35,7 @@ function CompletedMoviesPage() {
                 <button> Delete </button>
                 <button> Currently Watching</button>
                 <button> Completed </button>
-                <button> DNF </button>
+                <button> Did Not Finish </button>
                 </div>
             </div>
           );

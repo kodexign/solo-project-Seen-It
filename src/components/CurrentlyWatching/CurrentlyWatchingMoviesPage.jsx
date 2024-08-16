@@ -9,14 +9,27 @@ function CurrentlyWatchingMoviesPage() {
   const movies = useSelector(store => store.mediaReducer);
   const history = useHistory();
   
-  const completed = useState('completed');
+ 
 
   useEffect(() => {
     dispatch({ type: 'FETCH_CURRENT_MOVIES' }); // type is from movies.saga.js
   }, []);
-  const handleComplete = (id) => {
-    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: completed});
+
+//button works but w/error: 
+//Error setting media to completed: 
+//TypeError: Cannot destructure property 'id' of 'action.payload' 
+//as it is undefined.
+  const handleComplete = (media) => {
+    const mediaId = media.id;
+    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: mediaId});
+    console.log ('handleComplete successful');
+
   };
+  //button works but not dispatching
+  const handleDelete = (media) =>{
+    dispatch({ type:'SET_DELETE_MEDIA', payload: media})
+    console.log ('handleDelete Successful');
+  }
 
   return (
     <main>
@@ -30,7 +43,7 @@ function CurrentlyWatchingMoviesPage() {
             <div data-testid='movieItem' key={movie.id}>
               <p>{movie.title}</p>
               <div className='statusChangeButtons'>
-                <button> Delete </button>
+                <button onClick={handleDelete(movie.id)}> Delete </button>
                 <button> To Watch</button>
                 <button onClick={handleComplete}> Completed </button>
                 <button> DNF </button>

@@ -8,7 +8,7 @@ function AddNewMediaForm() {
     const [seasonNum, setSeasonNum] = useState();
     const [numOfEps, setNumOfEps] = useState();
     const [platform, setPlatform] = useState('');
-    const [status, setStatus] = useState(0);
+    const [status, setStatus] = useState('select');
 
     
     
@@ -34,6 +34,7 @@ function AddNewMediaForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        alert(`${title} has been successfully added!`)
     
         const newMedia = {
         title: title,
@@ -47,13 +48,13 @@ function AddNewMediaForm() {
         dispatch({ type: 'ADD_NEW', payload: newMedia});
         
         setTitle('');
-        setMovie('');
+        setMovie('select');
         setSeasonNum('');
         setNumOfEps('');
         setPlatform('');
-        setStatus(''); // clears input form
+        setStatus('select'); // clears input form
 
-        console.log('add success!')
+        console.log('MEDIA ADDED SUCCESSFULLY', newMedia)
     };
     
 
@@ -120,7 +121,7 @@ function AddNewMediaForm() {
             </div>
             <div>
                 <select className='statusList' onChange ={(event) => setStatus (event.target.value)} >
-                <option value='select'>---SELECT STATUS---</option>
+                <option value="select">---SELECT STATUS---</option>
                     {statuses.map(status => {
                         return(
                             <option key={status.id} value ={status.id}> {status.type}</option>

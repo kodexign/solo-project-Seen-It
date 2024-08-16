@@ -1,8 +1,7 @@
 
 
-const initialState = {};
 
-const updateStatusReducer = (state = initialState, action) => {
+const updateStatusReducer = (state = [], action) => {
     switch (action.type) {
     case 'SET_STATUS_COMPLETED':
         return action.payload;
@@ -12,6 +11,8 @@ const updateStatusReducer = (state = initialState, action) => {
         return action.payload;
     case 'SET_STATUS_DNF':
         return action.payload;
+    case 'SET_DELETE_MEDIA':
+        return state.filter(media => media.id !== action.payload)
     default:
         return state;
     } 
