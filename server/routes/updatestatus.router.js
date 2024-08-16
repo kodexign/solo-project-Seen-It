@@ -4,7 +4,7 @@ const router = express.Router();
 
 //Update movie status to complete
 router.put('/update-status-to-completed/:id', (req, res) => {
-    const { id } = req.params.id;
+    const { id } = req.params;
       const queryText = `
       UPDATE media
       SET status_id = $1
@@ -26,7 +26,7 @@ router.put('/update-status-to-completed/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  let { id } = req.params;
+  const { id } = req.params;
   const sqlText = `DELETE FROM "media" WHERE "id" = $1;`;
   pool.query(sqlText, [id])
       .then((result) => {
@@ -34,8 +34,8 @@ router.delete('/:id', (req, res) => {
           res.sendStatus(201);
       })
       .catch((error) => {
-          console.log(`Error making database query ${sqlText}`, error);
-          res.sendStatus(500); // Good server always responds
+          console.log(`Error deleting media ${sqlText}`, error);
+          res.sendStatus(500); 
       })
 })
 module.exports = router;

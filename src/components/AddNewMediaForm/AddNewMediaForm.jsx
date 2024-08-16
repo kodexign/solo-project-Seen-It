@@ -4,25 +4,32 @@ import { useSelector, useDispatch } from 'react-redux';
 function AddNewMediaForm() {
     const dispatch = useDispatch();
     const [title, setTitle] = useState('');
-    const [movie, setMovie] = useState(true);
-    const [seasonNum, setSeasonNum] = useState(null);
-    const [numOfEps, setNumOfEps] = useState(null);
+    const [movie, setMovie] = useState('select');
+    const [seasonNum, setSeasonNum] = useState();
+    const [numOfEps, setNumOfEps] = useState();
     const [platform, setPlatform] = useState('');
-    const [status, setStatus] = useState('');
+    const [status, setStatus] = useState(0);
 
     
     
     const statuses = useSelector((store) => store.getStatusesReducer); 
     console.log ('statuses array:',statuses);
-//automatically populate status in status drop down
+
+    //automatically populate status in status drop down
     useEffect(() => {
         dispatch({ type: 'FETCH_STATUSES' }); //from rootSaga
       }, []);
 
     //checks media type, if TV Show, will render seasonNum and numOfEps input field
-    const [selectMedia, setSelectMedia]= useState(''); //used with rendering additional TV Show input fields
     const mediaCheck = (event) => {
-        setSelectMedia(event.target.value);
+            if (event.target.value === 'false') {
+              setMovie(false); // TV Show
+            } else if (event.target.value === 'true') {
+              setMovie(true); // Movie
+            } else {
+              setMovie('select'); // Default option or any other value
+            }
+        console.log('mediaCheck', event.target.value);
     };
 
     const handleSubmit = (event) => {
@@ -38,12 +45,15 @@ function AddNewMediaForm() {
 
     }
         dispatch({ type: 'ADD_NEW', payload: newMedia});
+        
         setTitle('');
-        setMovie(true);
-        setSeasonNum(null);
-        setNumOfEps(null);
+        setMovie('');
+        setSeasonNum('');
+        setNumOfEps('');
         setPlatform('');
         setStatus(''); // clears input form
+
+        console.log('add success!')
     };
     
 
@@ -58,6 +68,8 @@ function AddNewMediaForm() {
                         name="title"
                         placeholder='Title'
                         required
+                        value={title}
+                        onChange={(event) => setTitle(event.target.value)}
                     />
                 </label>
             </div>
@@ -65,26 +77,30 @@ function AddNewMediaForm() {
                 <label htmlFor='mediaType'>
                 <select className='mediaType' onChange ={mediaCheck}>
                     <option value="select"> --Select One -- </option>
-                    <option value="tvShow"> TV Show</option>
-                    <option value="movie"> Movie </option>
+                    <option value={false}> TV Show</option>
+                    <option value={true}> Movie </option>
                 </select>
                 </label>
             </div>
-            {selectMedia === 'tvShow' && (
+            {movie === false && (
             <div id = "tvShowDetails">
                 <label htmlFor="seasonNum">
                     <input
                         type="text"
                         name="seasonNumber"
                         placeholder='Season Number'
+                        value={seasonNum}
+                        onChange={(event) => setSeasonNum(event.target.value)}
 
                     />
                 </label>
                 <label htmlFor="numOfEps">
                     <input
-                        type="text"
+                        type= 'number'
                         name="numOfEps"
                         placeholder='Num of Eps in Season'
+                        value={numOfEps}
+                        onChange={(event) => setNumOfEps(event.target.value)}
                        
                     />
                 </label>
@@ -96,15 +112,18 @@ function AddNewMediaForm() {
                         type="text"
                         name="platform"
                         placeholder='platform: where?'
+                        value={platform}
+                        onChange={(event) => setPlatform(event.target.value)}
 
                     />
                 </label>
             </div>
             <div>
-                <select className='statusList' >
+                <select className='statusList' onChange ={(event) => setStatus (event.target.value)} >
+                <option value='select'>---SELECT STATUS---</option>
                     {statuses.map(status => {
                         return(
-                            <option key={status.id}> {status.type}</option>
+                            <option key={status.id} value ={status.id}> {status.type}</option>
                         );          
                     })}
                  </select>   

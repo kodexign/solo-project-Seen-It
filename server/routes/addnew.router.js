@@ -5,8 +5,7 @@ const router = express.Router();
 //GET all status
 router.get('/get-all-status', (req, res) => {
   const queryText = `
-  SELECT "type"
-  FROM status; 
+  SELECT * FROM status; 
   `;
   
   pool.query(queryText)
