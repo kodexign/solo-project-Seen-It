@@ -50,7 +50,7 @@ return (
   <main>
   <div className="container">
     <div>
-      <h2>Completed Movies List</h2>
+      <h2>Completed Shows List</h2>
     </div>
     <section className="movies">
       {movies.map(movie => {
