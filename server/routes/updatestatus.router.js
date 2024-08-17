@@ -2,7 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-//Update movie status to complete
+//Update status to complete
 router.put('/update-status-to-completed/:id', (req, res) => {
     const { id } = req.params;
       const queryText = `
@@ -20,6 +20,66 @@ router.put('/update-status-to-completed/:id', (req, res) => {
       res.sendStatus(500)
     })
     
+});
+
+//Update status to Currently Watching
+router.put('/update-status-to-currently_watching/:id', (req, res) => {
+  const { id } = req.params;
+    const queryText = `
+    UPDATE media
+    SET status_id = 2
+    WHERE id = $1  
+    `;
+
+pool.query(queryText,[id])
+  .then(result => {
+    res.send(result.rows);
+  })
+  .catch(err => {
+    console.log('ERROR: Could not update media to currently watching', err);
+    res.sendStatus(500)
+  })
+  
+});
+
+//Update status to To Watch
+router.put('/update-status-to-watch/:id', (req, res) => {
+  const { id } = req.params;
+    const queryText = `
+    UPDATE media
+    SET status_id = 3
+    WHERE id = $1  
+    `;
+
+pool.query(queryText,[id])
+  .then(result => {
+    res.send(result.rows);
+  })
+  .catch(err => {
+    console.log('ERROR: Could not update media to to watch', err);
+    res.sendStatus(500)
+  })
+  
+});
+
+//Update status to did not finish
+router.put('/update-status-to-dnf/:id', (req, res) => {
+  const { id } = req.params;
+    const queryText = `
+    UPDATE media
+    SET status_id = 4
+    WHERE id = $1  
+    `;
+
+pool.query(queryText,[id])
+  .then(result => {
+    res.send(result.rows);
+  })
+  .catch(err => {
+    console.log('ERROR: Could not update media to to watch', err);
+    res.sendStatus(500)
+  })
+  
 });
 
 router.delete('/:id', (req, res) => {

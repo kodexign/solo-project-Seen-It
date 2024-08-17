@@ -7,7 +7,6 @@ function CurrentlyWatchingMoviesPage() {
 
   const dispatch = useDispatch();
   const movies = useSelector(store => store.mediaReducer);
-  console.log('logging movies' , movies); 
   const history = useHistory();
  
 
@@ -17,22 +16,38 @@ function CurrentlyWatchingMoviesPage() {
 
 }, []);
 
-//button works but w/error: 
-//Error setting media to completed: 
-//TypeError: Cannot destructure property 'id' of 'action.payload' 
-//as it is undefined.
-  const handleComplete = (movies) => {
-    const mediaId = movies.id;
+//update status to complete
+  const handleComplete = (movie) => {
+    const mediaId = movie.id;
     console.log ('logging mediaId:', mediaId);
-    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: mediaId});
+    dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: {id: mediaId}});
     console.log ('handleComplete successful');
 
   };
-  //button works but not dispatching
+
+//update status to  to watch
+  const handleToWatch = (movie) => {
+    const mediaId = movie.id;
+    console.log ('logging mediaId:', mediaId);
+    dispatch({ type: 'UPDATE_STATUS_TO_WATCH', payload: {id: mediaId}});
+    console.log ('handleComplete successful');
+
+  };
+//update status to did not finish
+  const handleDNF = (movie) => {
+    const mediaId = movie.id;
+    console.log ('logging mediaId:', mediaId);
+    dispatch({ type: 'UPDATE_STATUS_TO_DNF', payload: {id: mediaId}});
+    console.log ('handleComplete successful');
+
+  };
+  
+  //delete media from database
   const handleDelete = (movie) =>{
     const mediaId = movie.id;
-    dispatch({ type:'SET_DELETE_MEDIA', payload: mediaId})
-    console.log ('handleDelete Successful');
+    console.log ('logging mediaId:', mediaId);
+    dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
+    console.log ('handleDelete Successful, deleted :', mediaId, movie.title);
   }
 
   return (
@@ -47,10 +62,10 @@ function CurrentlyWatchingMoviesPage() {
             <div data-testid='movieItem' key={movie.id}>
               <p value={movie.id}>{movie.title}</p>
               <div className='statusChangeButtons'>
-                <button onClick={handleDelete}> Delete </button>
-                <button> To Watch</button>
-                <button onClick={handleComplete}> Completed </button>
-                <button> DNF </button>
+                <button className="deleteButton" onClick={() => handleDelete(movie)}> Delete </button>
+                <button className="toWatchButton" onClick={() => handleToWatch(movie)}> To Watch</button>
+                <button className="completedButton" onClick={() => handleComplete(movie)}> Completed </button>
+                <button className="dnfButton" onClick={() => handleDNF(movie)}> DNF </button>
                 </div>
             </div>
           );

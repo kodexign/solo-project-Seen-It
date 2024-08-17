@@ -16,6 +16,14 @@ function ToWatchMoviesPage() {
   //   history.push(`/details/${id}`);
   // };
 
+  const handleDelete = (movie) =>{
+    
+    const mediaId = movie.id;
+    console.log ('logging mediaId:', mediaId);
+    dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
+    console.log ('handleDelete Successful', mediaId);
+  }
+
   return (
     <main>
     <div className="container">
@@ -28,7 +36,7 @@ function ToWatchMoviesPage() {
             <div data-testid='movieItem' key={movie.id}>
               <p>{movie.title}</p>
               <div className='statusChangeButtons'>
-                <button> Delete </button>
+              <button  onClick={() => handleDelete(movie)}> Delete </button>
                 <button> Currently Watching</button>
                 <button> Completed </button>
                 <button> DNF </button>
