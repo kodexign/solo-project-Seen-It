@@ -51,7 +51,7 @@ function ToWatchShowsPage() {
     <main>
       <div className="container">
         <div>
-          <h2>To Watch Movies List</h2>
+          <h2>To Watch Shows List</h2>
         </div>
         <section className="movies">
           {movies.map(movie => {

@@ -1,4 +1,20 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import './ToWatchPage.css';
+import { useHistory } from 'react-router-dom';
+
+function aTemplate() {
+
+  const dispatch = useDispatch();
+  const movies = useSelector(store => store.mediaReducer);
+  const history = useHistory();
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_TO_WATCH_SHOWS' }); // type is from movies.saga.js to show list of shows/movies
+  }, []);
+
 //update status to complete
+
 const handleComplete = (movie) => {
     const mediaId = movie.id;
     console.log ('logging mediaId:', mediaId);
@@ -45,7 +61,7 @@ const handleComplete = (movie) => {
     <main>
     <div className="container">
       <div>
-        <h2>Currently Watching Movies List</h2>
+        <h2>Title of List</h2>
       </div>
       <section className="movies">
         {movies.map(movie => {
@@ -63,3 +79,11 @@ const handleComplete = (movie) => {
           );
         })}
       </section>
+
+
+    </div>
+    </main>
+  );
+}
+
+export default aTemplate;
