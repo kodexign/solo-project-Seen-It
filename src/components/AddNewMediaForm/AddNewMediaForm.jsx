@@ -2,23 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 function AddNewMediaForm() {
+
     const dispatch = useDispatch();
     const [title, setTitle] = useState('');
     const [movie, setMovie] = useState('select');
-    const [seasonNum, setSeasonNum] = useState();
-    const [numOfEps, setNumOfEps] = useState();
+    const [seasonNum, setSeasonNum] = useState('');
+    const [numOfEps, setNumOfEps] = useState('');
     const [platform, setPlatform] = useState('');
     const [status, setStatus] = useState('select');
-
-    
     
     const statuses = useSelector((store) => store.getStatusesReducer); 
     console.log ('statuses array:',statuses);
 
+    const users = useSelector((store)=> store.getUserIdReducer);
+
     //automatically populate status in status drop down
     useEffect(() => {
-        dispatch({ type: 'FETCH_STATUSES' }); //from rootSaga
-      }, []);
+        dispatch({ type: 'FETCH_STATUSES' });
+    }, []);
 
     //checks media type, if TV Show, will render seasonNum and numOfEps input field
     const mediaCheck = (event) => {
@@ -64,6 +65,8 @@ function AddNewMediaForm() {
             <h2>Add New Media Form</h2>
             <div>
                 <label htmlFor="title">
+                Title:
+                <br/>
                     <input
                         type="text"
                         name="title"
@@ -76,6 +79,8 @@ function AddNewMediaForm() {
             </div>
             <div>
                 <label htmlFor='mediaType'>
+                Movie or TV Show
+                <br/>
                 <select className='mediaType' onChange ={mediaCheck}>
                     <option value="select"> --Select One -- </option>
                     <option value={false}> TV Show</option>
@@ -86,6 +91,8 @@ function AddNewMediaForm() {
             {movie === false && (
             <div id = "tvShowDetails">
                 <label htmlFor="seasonNum">
+                Season Number:
+                <br/>
                     <input
                         type="text"
                         name="seasonNumber"
@@ -96,26 +103,28 @@ function AddNewMediaForm() {
                     />
                 </label>
                 <label htmlFor="numOfEps">
+                Number of Episodes
+                <br/>
                     <input
                         type= 'number'
                         name="numOfEps"
                         placeholder='Num of Eps in Season'
                         value={numOfEps}
                         onChange={(event) => setNumOfEps(event.target.value)}
-                       
                     />
                 </label>
             </div>
             )}
             <div>
                 <label htmlFor="platform">
+                    Platform:
+                    <br/>
                     <input
                         type="text"
                         name="platform"
                         placeholder='platform: where?'
                         value={platform}
                         onChange={(event) => setPlatform(event.target.value)}
-
                     />
                 </label>
             </div>

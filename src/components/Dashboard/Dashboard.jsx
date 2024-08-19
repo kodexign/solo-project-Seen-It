@@ -14,7 +14,8 @@ import { useHistory } from 'react-router-dom';
 
 function Dashboard() {
   const dispatch = useDispatch();
-  const recentlyAdded = useSelector(store => store.mediaReducer);
+  const recentlyAdded = useSelector(store => store.threeRecentReducer);
+  const threeCurrent = useSelector(store => store.threeCurrentReducer);
 
  
   const history = useHistory();
@@ -22,8 +23,10 @@ function Dashboard() {
  
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_RECENTLY_ADDED' })
+    dispatch({ type: 'FETCH_RECENTLY_ADDED' });
+    dispatch({ type: 'FETCH_THREE_CURRENT' });
   }, []);
+  
   return (
     <div className="container">
       <div>
@@ -31,12 +34,15 @@ function Dashboard() {
         
         <div>
           <h3>Currently Watching</h3>
- 
-
-        </div>
-
-        <div>
-        <h3>Recently Updated</h3>
+          <section className="three-current">
+        {threeCurrent.map(media => {
+          return (
+            <div data-testid='mediaItem' key={media.id}>
+              <p>{media.title}</p>
+            </div>
+          );
+        })}
+      </section>
 
         </div>
         <div>

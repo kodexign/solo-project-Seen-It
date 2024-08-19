@@ -5,6 +5,8 @@ import addNewReducer from './addnew.reducer';
 import mediaReducer from './media.reducer';
 import updateStatusReducer from './updatestatus.reducer';
 import getStatusesReducer from './getstatuses.reducer';
+import threeCurrentReducer from './threecurrent.reducer';
+import threeRecentReducer from './threerecentlyadd.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,8 +20,9 @@ const rootReducer = combineReducers({
   addNewReducer,
   mediaReducer,
   updateStatusReducer,
-  getStatusesReducer
-  
+  getStatusesReducer,
+  threeCurrentReducer,
+  threeRecentReducer,
 });
 
 export default rootReducer;
