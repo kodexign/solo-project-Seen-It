@@ -6,7 +6,11 @@ function LoginPage() {
   const history = useHistory();
 
   return (
-    <div>
+   
+
+    <div> 
+      <div className='clapper'></div>
+      
       <LoginForm />
 
       <center>

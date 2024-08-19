@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import './AddNewMediaForm.css';
 
 function AddNewMediaForm() {
 
@@ -13,8 +14,6 @@ function AddNewMediaForm() {
     
     const statuses = useSelector((store) => store.getStatusesReducer); 
     console.log ('statuses array:',statuses);
-
-    const users = useSelector((store)=> store.getUserIdReducer);
 
     //automatically populate status in status drop down
     useEffect(() => {
@@ -61,9 +60,12 @@ function AddNewMediaForm() {
 
 
     return (
+        
         <form className="formPanel" onSubmit={handleSubmit}>
-            <h2>Add New Media Form</h2>
+            <div className='add-clapper'>clapper decor div</div>
+            
             <div>
+                <h2>Add New Media Form</h2>
                 <label htmlFor="title">
                 Title:
                 <br/>
@@ -88,6 +90,7 @@ function AddNewMediaForm() {
                 </select>
                 </label>
             </div>
+            <br />
             {movie === false && (
             <div id = "tvShowDetails">
                 <label htmlFor="seasonNum">
@@ -102,6 +105,7 @@ function AddNewMediaForm() {
 
                     />
                 </label>
+                <br />
                 <label htmlFor="numOfEps">
                 Number of Episodes
                 <br/>
@@ -129,6 +133,8 @@ function AddNewMediaForm() {
                 </label>
             </div>
             <div>
+            Status:
+            <br />
                 <select className='statusList' onChange ={(event) => setStatus (event.target.value)} >
                 <option value="select">---SELECT STATUS---</option>
                     {statuses.map(status => {
