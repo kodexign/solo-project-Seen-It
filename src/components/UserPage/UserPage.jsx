@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import './UserPage.css';
 
 
 function UserPage() {
@@ -23,15 +24,20 @@ function UserPage() {
 
   return (
     <div className="container">
+      
+      <div className='welcome'>
+        <h1>Dashboard</h1>
       <h2>Welcome, {user.first_name}!</h2>
-      <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
-
-      <div className="container">
+       
+      </div>
+      <div className="dashboard">
         <div>
-          <h1>Dashboard</h1>
-
-          <div className='three-current'>
+        <div className='add-new-link'>
+            <Link className="navLink" to="/addnewmediaform">
+              Add New
+            </Link>
+          </div>
+          <div className='currently-watching'>
             <h3>Currently Watching</h3>
             <section className="three-current">
               {threeCurrent.map(media => {
@@ -44,9 +50,9 @@ function UserPage() {
             </section>
           </div>
 
-          <div className='three-recent'>
+          <div className='recently-added'>
             <h3>Recently Added</h3>
-            <section className="recently-added">
+            <section className="three-recent">
               {recentlyAdded.map(media => {
                 return (
                   <div data-testid='mediaItem' key={media.id}>
@@ -56,17 +62,9 @@ function UserPage() {
               })}
             </section>
           </div>
-
-          <div className='add-new-link'>
-            <Link className="navLink" to="/addnewmediaform">
-              Add New
-            </Link>
-          </div>
+        </div>
         </div>
       </div>
-
-    </div>
-
 
   );
 }

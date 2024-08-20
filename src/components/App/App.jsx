@@ -20,7 +20,6 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddNewMediaForm from '../AddNewMediaForm/AddNewMediaForm';
-import Dashboard from '../Dashboard/Dashboard';
 import MoviesPage from '../MoviesPage/MoviesPage';
 import TVShowsPage from '../TVShowsPage/TVShowsPage';
 import CompletedMoviesPage from '../CompletedPage/CompletedMoviesPage';
@@ -85,12 +84,6 @@ function App() {
           >
             <AddNewMediaForm />
 
-          </ProtectedRoute>
-
-          <ProtectedRoute // logged in shows DASHBOARD
-            exact path="/dashboard"
-          >
-            <Dashboard />
           </ProtectedRoute>
   
   {/* MOVIE PATHS */}
