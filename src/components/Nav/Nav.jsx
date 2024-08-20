@@ -2,10 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Nav() {
   const user = useSelector((store) => store.user);
+
+  const dispatch = useDispatch();
+
+  const clearMedia = () => {
+    dispatch({ type: 'CLEAR_MEDIA' });
+  }
 
   return (
     <div className="nav">
@@ -13,6 +19,8 @@ function Nav() {
         <h2 className="nav-title">Seen<span style={{ color: '#08b1ff' }}>It!</span> </h2>
       </Link>
       <div>
+     
+
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
@@ -39,16 +47,16 @@ function Nav() {
               </Link>
 
               <div className="dropdown-content">
-                <Link className="navLink" to="/completed-shows">
+                <Link className="navLink" to="/completed-shows" >
                   Completed
                 </Link>
-                <Link className="navLink" to="/currently-watching-shows">
+                <Link className="navLink" to="/currently-watching-shows" >
                   Currently Watching
                 </Link>
-                <Link className="navLink" to="/to-watch-shows">
+                <Link className="navLink" to="/to-watch-shows" >
                   To Watch
                 </Link>
-                <Link className="navLink" to="/did-not-finish-shows">
+                <Link className="navLink" to="/did-not-finish-shows" >
                   Did Not Finish
                 </Link>
               </div>
@@ -60,16 +68,16 @@ function Nav() {
               </Link>
               
               <div className="dropdown-content">
-                <Link className="navLink" to="/completed-movies">
+                <Link className="navLink" to="/completed-movies" onClick={clearMedia}>
                   Completed
                 </Link>
-                <Link className="navLink" to="/currently-watching-movies">
+                <Link className="navLink" to="/currently-watching-movies" onClick={clearMedia}>
                   Currently Watching
                 </Link>
-                <Link className="navLink" to="/to-watch-movies">
+                <Link className="navLink" to="/to-watch-movies" onClick={clearMedia}>
                   To Watch
                 </Link>
-                <Link className="navLink" to="/did-not-finish-movies">
+                <Link className="navLink" to="/did-not-finish-movies" onClick={clearMedia}>
                   Did Not Finish
                 </Link>
               </div>

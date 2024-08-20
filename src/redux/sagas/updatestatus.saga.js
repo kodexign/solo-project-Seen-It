@@ -7,7 +7,8 @@ function* updateStatusToCompleted(action) {
     const { id } =action.payload;
     const response = yield axios.put(`/api/media/update-status-to-completed/${id}`);
     yield put({ type: 'SET_STATUS_COMPLETED', payload: response.data }); //from reducer
-    
+    // yield put({ type: 'FETCH_TO_WATCH_MOVIES' });
+    // yield put({ type: 'FETCH_TO_WATCH_SHOWS' });
 
   } catch (error) {
     console.log('Error setting media to completed:', error);
@@ -19,7 +20,8 @@ function* updateStatusCurrentlyWatching(action) {
     const { id } =action.payload;
     const response = yield axios.put(`/api/media//update-status-to-currently_watching/${id}`);
     yield put({ type: 'SET_STATUS_CURRENTLY_WATCHING', payload: response.data }); //from reducer
-    
+    yield put({ type: 'FETCH_TO_WATCH_MOVIES' });
+    // yield put({ type: 'FETCH_TO_WATCH_SHOWS' });
 
   } catch (error) {
     console.log('Error setting media to currently watching:', error);
@@ -31,7 +33,9 @@ function* updateStatusToWatch(action) {
     const { id } =action.payload;
     const response = yield axios.put(`/api/media/update-status-to-watch/${id}`);
     yield put({ type: 'SET_STATUS_TO_WATCH', payload: response.data }); //from reducer
-    
+    yield put({ type: 'FETCH_TO_WATCH_MOVIES' });
+    // yield put({ type: 'FETCH_TO_WATCH_SHOWS' });
+
 
   } catch (error) {
     console.log('Error setting media to to watch:', error);
@@ -43,7 +47,8 @@ function* updateStatusToDNF(action) {
     const { id } =action.payload;
     const response = yield axios.put(`/api/media/update-status-to-dnf/${id}`);
     yield put({ type: 'SET_STATUS_DNF', payload: response.data }); //from reducer
-    
+    yield put({ type: 'FETCH_TO_WATCH_MOVIES' });
+    // yield put({ type: 'FETCH_TO_WATCH_SHOWS' });
 
   } catch (error) {
     console.log('Error setting media to did not finish:', error);
@@ -55,7 +60,8 @@ function* deleteMedia(action) {
     const { id } = action.payload;
     const response = yield axios.delete(`/api/media/${id}`);
     yield put({ type: 'SET_DELETE_MEDIA', payload: response.data }); //from reducer
-    
+    yield put({ type: 'FETCH_TO_WATCH_MOVIES' });
+    // yield put({ type: 'FETCH_TO_WATCH_SHOWS' });
 
   } catch (error) {
     console.log('Error deleting media:', error);

@@ -44,9 +44,10 @@ function ToWatchShowsPage() {
     const mediaId = show.id;
     console.log('logging mediaId:', mediaId);
     dispatch({ type: 'DELETE_MEDIA', payload: { id: mediaId } });
+    alert(`${show.title} has been Deleted Forever!`);
     console.log('handleDelete Successful, deleted :', mediaId, show.title);
   }
-  dispatch({ type: 'FETCH_TO_WATCH_SHOWS', payload: shows });
+
   
   return (
     <main>

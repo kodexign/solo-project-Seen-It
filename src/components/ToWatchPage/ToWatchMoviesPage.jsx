@@ -18,6 +18,7 @@ const handleComplete = (movie) => {
   const mediaId = movie.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: {id: mediaId}});
+  dispatch({ type: 'FETCH_TO_WATCH_MOVIES' });
   console.log ('handleComplete successful');
 
 };
@@ -27,6 +28,7 @@ const handleDNF = (movie) => {
   const mediaId = movie.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_DNF', payload: {id: mediaId}});
+  dispatch({ type: 'FETCH_TO_WATCH_MOVIES' });
   console.log ('handleComplete successful');
 
 };
@@ -35,6 +37,7 @@ const handleCurrentlyWatching = (movie) => {
   const mediaId = movie.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_CURRENTLY_WATCHING', payload: {id: mediaId}});
+  dispatch({ type: 'FETCH_TO_WATCH_MOVIES' });
   console.log ('handleComplete successful');
 
 };
@@ -44,11 +47,10 @@ const handleDelete = (movie) =>{
   const mediaId = movie.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
+  dispatch({ type: 'FETCH_TO_WATCH_MOVIES' });
   alert(`${movie.title} has been Deleted permanently! If you want to see it on a list again, please re-add!`);
   console.log ('handleDelete Successful, deleted :', mediaId, movie.title);
 }
-
-dispatch({ type: 'FETCH_TO_WATCH_MOVIES', payload: movies});
 
 return (
   <main>

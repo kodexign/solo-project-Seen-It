@@ -18,7 +18,6 @@ const handleToWatch = (movie) => {
   const mediaId = movie.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_WATCH', payload: {id: mediaId}});
-  alert(`${movie.title} has been moved to the To Watch Movies List!`);
   console.log ('handleComplete successful');
   
 };
@@ -27,7 +26,6 @@ const handleDNF = (movie) => {
   const mediaId = movie.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_DNF', payload: {id: mediaId}});
-  alert(`${movie.title} has been moved to the Did Not Finish Movies List!`);
   console.log ('handleComplete successful');
 
 };
@@ -36,7 +34,6 @@ const handleCurrentlyWatching = (movie) => {
   const mediaId = movie.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_CURRENTLY_WATCHING', payload: {id: mediaId}});
-  alert(`${movie.title} has been moved to the Currently Watching Movies List!`);
   console.log ('handleComplete successful');
 
 };
@@ -46,12 +43,10 @@ const handleDelete = (movie) =>{
   const mediaId = movie.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
-  alert(`${movie.title} has been moved Deleted Forever!`);
+  alert(`${movie.title} has been Deleted Forever!`);
   console.log ('handleDelete Successful, deleted :', mediaId, movie.title);
   
 }
-
-dispatch({ type: 'FETCH_COMPLETED_MOVIES', payload: movies });
 
 return (
   <main>

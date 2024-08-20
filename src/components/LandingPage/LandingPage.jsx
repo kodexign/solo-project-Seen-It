@@ -6,7 +6,7 @@ import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 function LandingPage() {
-  const [heading, setHeading] = useState('Welcome');
+  const [heading, setHeading] = useState('Have you SeenIt!?');
   const history = useHistory();
 
   const onLogin = (event) => {
@@ -20,16 +20,14 @@ function LandingPage() {
       <div className="grid">
         <div className="grid-col grid-col_8">
           <p>
-           Binge smarter, NOT harder.
+           Binge smarter, AND harder.
           </p>
 
           <p>
-            Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-            Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In
-            vehicula sapien at semper ultrices. Vivamus sed feugiat libero. Sed
-            sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
-            non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
-            amet nisi.
+           1) Register < br/>
+           2) log in! <br />
+           3) add a new media and 
+           <br />start making lists to keep track of all the things you're watching!
           </p>
         </div>
         <div className="grid-col grid-col_4">

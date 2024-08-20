@@ -43,9 +43,10 @@ const handleDelete = (show) =>{
   const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
+  alert(`${show.title} has been Deleted Forever!`);
   console.log ('handleDelete Successful, deleted :', mediaId, show.title);
 }
-dispatch({ type: 'FETCH_DNF_SHOWS', payload: shows});
+
 return (
   <main>
   <div className="container">
