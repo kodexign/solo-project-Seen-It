@@ -8,7 +8,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   margin: 0px;
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 45%, #0086c49d);
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 45%, #0084c29d);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -59,7 +59,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #0084c29d;
   text-decoration: none;
 }
 
@@ -76,8 +76,8 @@ Button
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  border-color: #0084c29d;
+  color: #08b1ff;
 }
 
 /* --------------------------------------------------------------------------------
