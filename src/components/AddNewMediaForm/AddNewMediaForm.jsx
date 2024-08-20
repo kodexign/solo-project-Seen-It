@@ -62,7 +62,7 @@ function AddNewMediaForm() {
     return (
         
         <form className="formPanel" onSubmit={handleSubmit}>
-            <div className='add-clapper'>clapper decor div</div>
+            {/* <div className='add-clapper'>clapper decor div</div> */}
             
             <div>
                 <h2>Add New Media Form</h2>
@@ -146,6 +146,7 @@ function AddNewMediaForm() {
 
             </div>
             <div>
+                <br />
                 <input className="btn" type="submit" name="submit" value="Add New" />
             </div>
         </form>

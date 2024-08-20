@@ -46,6 +46,8 @@ const handleDelete = (movie) =>{
   console.log ('handleDelete Successful, deleted :', mediaId, movie.title);
 }
 
+dispatch({ type: 'FETCH_DNF_MOVIES', payload: movies });
+
 return (
   <main>
   <div className="container">

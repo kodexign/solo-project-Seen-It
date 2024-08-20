@@ -6,15 +6,15 @@ import { useHistory } from 'react-router-dom';
 function DidNotFinishShowsPage() {
 
   const dispatch = useDispatch();
-  const movies = useSelector(store => store.mediaReducer);
+  const shows = useSelector(store => store.mediaReducer);
   const history = useHistory();
 
   useEffect(() => {
     dispatch({ type: 'FETCH_DNF_SHOWS' }); // type is from movies.saga.js
   }, []);
  //update status to complete
- const handleComplete = (movie) => {
-  const mediaId = movie.id;
+ const handleComplete = (show) => {
+  const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: {id: mediaId}});
   console.log ('handleComplete successful');
@@ -22,16 +22,16 @@ function DidNotFinishShowsPage() {
 };
 
 //update status to  to watch
-const handleToWatch = (movie) => {
-  const mediaId = movie.id;
+const handleToWatch = (show) => {
+  const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_WATCH', payload: {id: mediaId}});
   console.log ('handleComplete successful');
 };
 
 //update status to currently watching
-const handleCurrentlyWatching = (movie) => {
-  const mediaId = movie.id;
+const handleCurrentlyWatching = (show) => {
+  const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_CURRENTLY_WATCHING', payload: {id: mediaId}});
   console.log ('handleComplete successful');
@@ -39,13 +39,13 @@ const handleCurrentlyWatching = (movie) => {
 };
 
 //delete media from database
-const handleDelete = (movie) =>{
-  const mediaId = movie.id;
+const handleDelete = (show) =>{
+  const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
-  console.log ('handleDelete Successful, deleted :', mediaId, movie.title);
+  console.log ('handleDelete Successful, deleted :', mediaId, show.title);
 }
-
+dispatch({ type: 'FETCH_DNF_SHOWS', payload: shows});
 return (
   <main>
   <div className="container">
@@ -53,15 +53,15 @@ return (
       <h2>Did Not Finish -DNF- Shows List</h2>
     </div>
     <section className="movies">
-      {movies.map(movie => {
+      {shows.map(show => {
         return (
-          <div data-testid='movieItem' key={movie.id}>
-            <p value={movie.id}>{movie.title}</p>
+          <div data-testid='movieItem' key={show.id}>
+            <p value={show.id}>{show.title}</p>
             <div className='statusChangeButtons'>
-              <button className="deleteButton" onClick={() => handleDelete(movie)}> Delete </button>
-              <button className="toWatchButton" onClick={() => handleToWatch(movie)}> To Watch</button>
-              <button className="completedButton" onClick={() => handleComplete(movie)}> Completed </button>
-              <button className="currentlyButton" onClick={() => handleCurrentlyWatching(movie)}> Currently Watching</button>
+              <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
+              <button className="toWatchButton" onClick={() => handleToWatch(show)}> To Watch</button>
+              <button className="completedButton" onClick={() => handleComplete(show)}> Completed </button>
+              <button className="currentlyButton" onClick={() => handleCurrentlyWatching(show)}> Currently Watching</button>
               </div>
           </div>
         );

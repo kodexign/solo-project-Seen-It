@@ -39,7 +39,6 @@ const handleCurrentlyWatching = (movie) => {
 
 };
 
-
 //delete media from database
 const handleDelete = (movie) =>{
   const mediaId = movie.id;
@@ -48,6 +47,8 @@ const handleDelete = (movie) =>{
   alert(`${movie.title} has been Deleted permanently! If you want to see it on a list again, please re-add!`);
   console.log ('handleDelete Successful, deleted :', mediaId, movie.title);
 }
+
+dispatch({ type: 'FETCH_TO_WATCH_MOVIES', payload: movies});
 
 return (
   <main>

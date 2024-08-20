@@ -12,8 +12,6 @@ function CurrentlyWatchingMoviesPage() {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_CURRENT_MOVIES' }); // type is from movies.saga.js
-
-
 }, []);
 
 //update status to complete
@@ -42,14 +40,15 @@ function CurrentlyWatchingMoviesPage() {
 
   };
   
-  
   //delete media from database
   const handleDelete = (movie) =>{
     const mediaId = movie.id;
     console.log ('logging mediaId:', mediaId);
     dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
     console.log ('handleDelete Successful, deleted :', mediaId, movie.title);
-  }
+  };
+
+  dispatch({ type: 'FETCH_CURRENT_MOVIES', payload: movies });
 
   return (
     <main>
