@@ -45,6 +45,8 @@ pool.query(queryText,[id])
 //Update status to To Watch
 router.put('/update-status-to-watch/:id', (req, res) => {
   const { id } = req.params;
+  console.log('id:', id);
+  console.log('type of', typeof id);
     const queryText = `
     UPDATE media
     SET status_id = 3

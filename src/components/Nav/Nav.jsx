@@ -68,16 +68,16 @@ function Nav() {
               </Link>
               
               <div className="dropdown-content">
-                <Link className="navLink" to="/completed-movies" onClick={clearMedia}>
+                <Link className="navLink" to="/completed-movies">
                   Completed
                 </Link>
-                <Link className="navLink" to="/currently-watching-movies" onClick={clearMedia}>
+                <Link className="navLink" to="/currently-watching-movies" >
                   Currently Watching
                 </Link>
-                <Link className="navLink" to="/to-watch-movies" onClick={clearMedia}>
+                <Link className="navLink" to="/to-watch-movies" >
                   To Watch
                 </Link>
-                <Link className="navLink" to="/did-not-finish-movies" onClick={clearMedia}>
+                <Link className="navLink" to="/did-not-finish-movies" >
                   Did Not Finish
                 </Link>
               </div>

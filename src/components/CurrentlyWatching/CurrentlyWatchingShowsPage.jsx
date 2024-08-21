@@ -8,16 +8,16 @@ function CurrentlyWatchingShowsPage() {
   const dispatch = useDispatch();
   const shows = useSelector(store => store.mediaReducer);
   const history = useHistory();
-
+  
   useEffect(() => {
     dispatch({ type: 'FETCH_CURRENT_SHOWS' }); // type is from movies.saga.js
   }, []);
+
  //update status to complete
  const handleComplete = (show) => {
   const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: {id: mediaId}});
-  dispatch({ type: 'FETCH_CURRENT_SHOWS' });
   console.log ('handleComplete successful');
 
 };
@@ -27,7 +27,6 @@ const handleToWatch = (show) => {
   const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_WATCH', payload: {id: mediaId}});
-  dispatch({ type: 'FETCH_CURRENT_SHOWS' });
   console.log ('handleComplete successful');
 
 };
@@ -36,7 +35,6 @@ const handleDNF = (show) => {
   const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type: 'UPDATE_STATUS_TO_DNF', payload: {id: mediaId}});
-  dispatch({ type: 'FETCH_CURRENT_SHOWS' });
   console.log ('handleComplete successful');
 
 };
@@ -46,10 +44,11 @@ const handleDelete = (show) =>{
   const mediaId = show.id;
   console.log ('logging mediaId:', mediaId);
   dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
-  dispatch({ type: 'FETCH_CURRENT_SHOWS' });
   alert(`${show.title} has been Deleted Forever!`);
   console.log ('handleDelete Successful, deleted :', mediaId, show.title);
 }
+
+
 
 return (
   <main>

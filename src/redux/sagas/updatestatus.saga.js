@@ -7,7 +7,7 @@ function* updateStatusToCompleted(action) {
     const { id } =action.payload;
     const response = yield axios.put(`/api/media/update-status-to-completed/${id}`);
     yield put({ type: 'SET_STATUS_COMPLETED', payload: response.data }); //from reducer
-    // yield put({ type: 'FETCH_TO_WATCH_MOVIES' });
+    yield put({ type: 'FETCH_TO_WATCH_MOVIES' });
     // yield put({ type: 'FETCH_TO_WATCH_SHOWS' });
 
   } catch (error) {
@@ -31,6 +31,7 @@ function* updateStatusCurrentlyWatching(action) {
 function* updateStatusToWatch(action) {
   try {
     const { id } =action.payload;
+    console.log('id we we are putting:', id);
     const response = yield axios.put(`/api/media/update-status-to-watch/${id}`);
     yield put({ type: 'SET_STATUS_TO_WATCH', payload: response.data }); //from reducer
     yield put({ type: 'FETCH_TO_WATCH_MOVIES' });
