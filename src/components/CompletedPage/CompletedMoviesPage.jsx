@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './CompletedPage.css';
 import { useHistory } from 'react-router-dom';
+import './CompletedPage.css';
 
 function CompletedMoviesPage() {
 
@@ -52,7 +53,7 @@ return (
   <main>
   <div className="container">
     <div>
-      <h2>Completed Movies List</h2>
+      <h2 className='page-title'>Completed Movies</h2>
     </div>
     <section className="movies">
       {movies.map(movie => {
