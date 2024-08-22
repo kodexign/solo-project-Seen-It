@@ -69,10 +69,10 @@ function CompletedMoviesPage() {
                 <td>{movie.title}</td>
                 <td>{movie.platform}</td>
                 <td>
-                  <button className="deleteButton" onClick={() => handleDelete(movie)}> Delete </button>
                   <button className="toWatchButton" onClick={() => handleToWatch(movie)}> To Watch</button>
-                  <button className="currentlyButton" onClick={() => handleCurrentlyWatching(movie)}> Currently Watching</button>
+                  <button className="currentlyButton" onClick={() => handleCurrentlyWatching(movie)}>Watching</button>
                   <button className="dnfButton" onClick={() => handleDNF(movie)}> DNF </button>
+                  <button className="deleteButton" onClick={() => handleDelete(movie)}> Delete </button>
                 </td>
               </tr>
             ))}
