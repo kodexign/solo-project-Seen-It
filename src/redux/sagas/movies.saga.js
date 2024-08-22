@@ -40,7 +40,7 @@ function* fetchCompletedMovies() {
   function* fetchMoviesSaga() {
     yield takeEvery('FETCH_COMPLETED_MOVIES', fetchCompletedMovies);
     yield takeEvery('FETCH_CURRENT_MOVIES', fetchCurrentMovies);
-    yield takeEvery('FETCH_TO_WATCH_MOVIES', fetchToWatchMovies);
+    yield takeEvery('FETCH_CURRENT_MOVIES', fetchToWatchMovies);
     yield takeEvery('FETCH_DNF_MOVIES', fetchDNFMovies);
   }
   export default fetchMoviesSaga;

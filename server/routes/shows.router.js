@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/completed-shows', (req, res) => {
   // GET route code here
   const queryText = `
-  SELECT media.id, media.title, media.platform 
+  SELECT media.id, media.title, media.platform, media.season_number, media.number_of_episodes  
   FROM media
   JOIN status ON media.status_id = status.id
   WHERE media.movie = false AND status.type = 'completed' 
@@ -26,7 +26,7 @@ pool.query(queryText)
 
 router.get('/currently-watching-shows', (req, res) => {
   const queryText = `
-  SELECT media.id, media.title, media.platform 
+  SELECT media.id, media.title, media.platform, media.season_number, media.number_of_episodes 
   FROM media
   JOIN status ON media.status_id = status.id
   WHERE media.movie = false AND status.type = 'currently_watching';
@@ -43,7 +43,7 @@ pool.query(queryText)
 
 router.get('/to-watch-shows', (req, res) => {
   const queryText = `
-  SELECT media.id, media.title, media.platform 
+  SELECT media.id, media.title, media.platform, media.season_number, media.number_of_episodes  
   FROM media
   JOIN status ON media.status_id = status.id
   WHERE media.movie = false AND status.type = 'to_watch'
@@ -61,7 +61,7 @@ pool.query(queryText)
 
 router.get('/dnf-shows', (req, res) => {
   const queryText = `
-  SELECT media.id, media.title, media.platform 
+  SELECT media.id, media.title, media.platform, media.season_number, media.number_of_episodes  
   FROM media
   JOIN status ON media.status_id = status.id
   WHERE media.movie = false AND status.type = 'did_not_finish'

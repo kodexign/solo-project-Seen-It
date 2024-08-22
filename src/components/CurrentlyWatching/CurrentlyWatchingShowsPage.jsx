@@ -54,23 +54,37 @@ return (
   <main>
   <div className="container">
     <div>
-      <h2>Currently Watching Shows List</h2>
+    <h2 className='page-title'>Currently Watching Shows </h2>
     </div>
-    <section className="shows">
-      {shows.map(show => {
-        return (
-          <div data-testid='movieItem' key={show.id}>
-            <p value={show.id}>{show.title}</p>
-            <div className='statusChangeButtons'>
-              <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
-              <button className="toWatchButton" onClick={() => handleToWatch(show)}> To Watch</button>
-              <button className="completedButton" onClick={() => handleComplete(show)}> Completed </button>
-              <button className="dnfButton" onClick={() => handleDNF(show)}> DNF </button>
-              </div>
-          </div>
-        );
-      })}
-    </section>
+
+    <table className='table'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th> Platform</th>
+      <th>Season</th>
+      <th># of Eps</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {shows.map(show => (
+      <tr key={show.id}>
+        <td>{show.title}</td>
+        <td>{show.platform}</td>
+        <td>{show.season_number}</td>
+        <td>{show.number_of_episodes}</td>
+        <td>
+          <button className="toWatchButton" onClick={() => handleToWatch(show)}>To Watch</button>
+          <button className="completedButton" onClick={() => handleComplete(show)}>Completed</button>
+          <button className="dnfButton" onClick={() => handleDNF(show)}>DNF</button>
+          <button className="deleteButton" onClick={() => handleDelete(show)}>Delete</button>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
 
     </div>
     </main>

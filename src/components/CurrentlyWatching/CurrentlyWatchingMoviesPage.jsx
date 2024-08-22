@@ -55,21 +55,30 @@ function CurrentlyWatchingMoviesPage() {
       <div>
         <h2>Currently Watching Movies List</h2>
       </div>
-      <section className="movies">
-        {movies.map(movie => {
-          return (
-            <div data-testid='movieItem' key={movie.id}>
-              <p value={movie.id}>{movie.title}</p>
-              <div className='statusChangeButtons'>
-                <button className="deleteButton" onClick={() => handleDelete(movie)}> Delete </button>
-                <button className="toWatchButton" onClick={() => handleToWatch(movie)}> To Watch</button>
-                <button className="completedButton" onClick={() => handleComplete(movie)}> Completed </button>
-                <button className="dnfButton" onClick={() => handleDNF(movie)}> DNF </button>
-                </div>
-            </div>
-          );
-        })}
-      </section>
+      
+      <table className='table'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Platform</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {movies.map(movie => (
+      <tr key={movie.id}>
+        <td>{movie.title}</td>
+        <td>{movie.platform}</td>
+        <td>
+          <button className="deleteButton" onClick={() => handleDelete(movie)}>Delete</button>
+          <button className="toWatchButton" onClick={() => handleToWatch(movie)}>To Watch</button>
+          <button className="completedButton" onClick={() => handleComplete(movie)}>Completed</button>
+          <button className="dnfButton" onClick={() => handleDNF(movie)}>DNF</button>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
 
     </div>
     </main>

@@ -128,3 +128,35 @@ input {
   margin: auto;
   margin-bottom: 10px;
 }
+
+/* --------------------------------------------------------------------------------
+Media Pages Table
+-------------------------------------------------------------------------------- */
+.table{
+  box-sizing: border-box;
+  width: 80%;
+  height: 50%;
+  padding: 25px;
+  margin: 0 auto 20px;
+  background-color: #6c69693f;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.347);
+  text-align: center;
+}
+
+.page-title{
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #81d5fce3;
+  text-align: center;
+  color:#d0dce4;
+  
+  
+  
+}
+
+th{
+  color: rgb(194, 225, 253);
+  text-decoration-line: underline;
+
+}
