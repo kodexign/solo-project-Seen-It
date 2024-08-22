@@ -45,6 +45,7 @@ const handleDelete = (show) =>{
   console.log ('logging mediaId:', mediaId);
   dispatch({ type:'DELETE_MEDIA',  payload: {id: mediaId}});
   alert(`${show.title} has been Deleted Forever!`);
+  dispatch({ type: 'FETCH_CURRENT_SHOWS' });
   console.log ('handleDelete Successful, deleted :', mediaId, show.title);
 }
 
@@ -63,8 +64,8 @@ return (
       <th>Title</th>
       <th>Season</th>
       <th># of Eps</th>
-      <th> Platform</th>
-      <th>Actions</th>
+      <th>Platform</th>
+      <th>Update Status</th>
     </tr>
   </thead>
   <tbody>

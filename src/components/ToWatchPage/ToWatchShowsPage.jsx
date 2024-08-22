@@ -45,6 +45,7 @@ function ToWatchShowsPage() {
     console.log('logging mediaId:', mediaId);
     dispatch({ type: 'DELETE_MEDIA', payload: { id: mediaId } });
     alert(`${show.title} has been Deleted Forever!`);
+    dispatch({ type: 'FETCH_TO_WATCH_SHOWS' });
     console.log('handleDelete Successful, deleted :', mediaId, show.title);
   }
 
@@ -61,8 +62,8 @@ function ToWatchShowsPage() {
               <th>Title</th>
               <th>Season</th>
               <th># of Eps</th>
-              <th> Platform</th>
-              <th>Actions</th>
+              <th>Platform</th>
+              <th>Update Status</th>
             </tr>
           </thead>
           <tbody>
@@ -74,7 +75,7 @@ function ToWatchShowsPage() {
                 <td>{show.platform}</td>
                 <td>
                   <button className="completedButton" onClick={() => handleComplete(show)}> Completed </button>
-                  <button className="currentlyButton" onClick={() => handleCurrentlyWatching(show)}> Currently Watching</button>
+                  <button className="currentlyButton" onClick={() => handleCurrentlyWatching(show)}> Watching</button>
                   <button className="dnfButton" onClick={() => handleDNF(show)}> DNF </button>
                   <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
                   </td>

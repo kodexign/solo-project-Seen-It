@@ -51,23 +51,32 @@ return (
   <main>
   <div className="container">
     <div>
-      <h2>Did Not Finish -DNF- Movies List</h2>
+    <h2 className='page-title'>Did Not Finish -DNF- Movies List</h2>
     </div>
-    <section className="movies">
-      {movies.map(movie => {
-        return (
-          <div data-testid='movieItem' key={movie.id}>
-            <p value={movie.id}>{movie.title}</p>
-            <div className='statusChangeButtons'>
+
+    <table className='table'>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Platform</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {movies.map(movie => (
+              <tr key={movie.id}>
+                <td>{movie.title}</td>
+                <td>{movie.platform}</td>
+                <td>
               <button className="deleteButton" onClick={() => handleDelete(movie)}> Delete </button>
               <button className="toWatchButton" onClick={() => handleToWatch(movie)}> To Watch</button>
               <button className="completedButton" onClick={() => handleComplete(movie)}> Completed </button>
               <button className="currentlyButton" onClick={() => handleCurrentlyWatching(movie)}> Currently Watching</button>
-              </div>
-          </div>
-        );
-      })}
-    </section>
+              </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
 
     </div>
     </main>

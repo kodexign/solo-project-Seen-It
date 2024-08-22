@@ -35,6 +35,7 @@ function CompletedShowsPage() {
     const mediaId = show.id;
     console.log('logging mediaId:', mediaId);
     dispatch({ type: 'UPDATE_STATUS_TO_CURRENTLY_WATCHING', payload: { id: mediaId } });
+    dispatch({ type: 'FETCH_COMPLETED_SHOWS' });
     console.log('handleComplete successful');
 
   };
@@ -45,6 +46,7 @@ function CompletedShowsPage() {
     console.log('logging mediaId:', mediaId);
     dispatch({ type: 'DELETE_MEDIA', payload: { id: mediaId } });
     alert(`${show.title} has been Deleted Forever!`);
+    dispatch({ type: 'FETCH_COMPLETED_SHOWS' });
     console.log('handleDelete Successful, deleted :', mediaId, show.title);
 
   }
@@ -62,8 +64,8 @@ function CompletedShowsPage() {
               <th>Title</th>
               <th>Season</th>
               <th># of Eps</th>
-              <th> Platform</th>
-              <th>Actions</th>
+              <th>Platform</th>
+              <th>Update Status</th>
             </tr>
           </thead>
           <tbody>
@@ -76,7 +78,7 @@ function CompletedShowsPage() {
                 <td>
                   <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
                   <button className="toWatchButton" onClick={() => handleToWatch(show)}> To Watch</button>
-                  <button className="currentlyButton" onClick={() => handleCurrentlyWatching(show)}> Currently Watching</button>
+                  <button className="currentlyButton" onClick={() => handleCurrentlyWatching(show)}> Watching</button>
                   <button className="dnfButton" onClick={() => handleDNF(show)}> DNF </button>
                 </td>
               </tr>

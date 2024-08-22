@@ -44,6 +44,7 @@ function DidNotFinishShowsPage() {
     console.log('logging mediaId:', mediaId);
     dispatch({ type: 'DELETE_MEDIA', payload: { id: mediaId } });
     alert(`${show.title} has been Deleted Forever!`);
+    dispatch({ type: 'FETCH_DNF_SHOWS' });
     console.log('handleDelete Successful, deleted :', mediaId, show.title);
   }
 
@@ -59,8 +60,8 @@ function DidNotFinishShowsPage() {
               <th>Title</th>
               <th>Season</th>
               <th># of Eps</th>
-              <th> Platform</th>
-              <th>Actions</th>
+              <th>Platform</th>
+              <th>Update Status</th>
             </tr>
           </thead>
           <tbody>
@@ -73,7 +74,7 @@ function DidNotFinishShowsPage() {
                 <td>
                   <button className="toWatchButton" onClick={() => handleToWatch(show)}> To Watch</button>
                   <button className="completedButton" onClick={() => handleComplete(show)}> Completed </button>
-                  <button className="currentlyButton" onClick={() => handleCurrentlyWatching(show)}> Currently Watching</button>
+                  <button className="currentlyButton" onClick={() => handleCurrentlyWatching(show)}> Watching</button>
                   <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
                 </td>
               </tr>
