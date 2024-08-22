@@ -61,9 +61,9 @@ return (
   <thead>
     <tr>
       <th>Title</th>
-      <th> Platform</th>
       <th>Season</th>
       <th># of Eps</th>
+      <th> Platform</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -71,9 +71,9 @@ return (
     {shows.map(show => (
       <tr key={show.id}>
         <td>{show.title}</td>
-        <td>{show.platform}</td>
         <td>{show.season_number}</td>
         <td>{show.number_of_episodes}</td>
+        <td>{show.platform}</td>
         <td>
           <button className="toWatchButton" onClick={() => handleToWatch(show)}>To Watch</button>
           <button className="completedButton" onClick={() => handleComplete(show)}>Completed</button>

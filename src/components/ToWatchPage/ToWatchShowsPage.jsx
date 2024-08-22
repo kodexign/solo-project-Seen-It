@@ -59,9 +59,9 @@ function ToWatchShowsPage() {
           <thead>
             <tr>
               <th>Title</th>
-              <th> Platform</th>
               <th>Season</th>
               <th># of Eps</th>
+              <th> Platform</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -69,14 +69,14 @@ function ToWatchShowsPage() {
             {shows.map(show => (
               <tr key={show.id}>
                 <td>{show.title}</td>
-                <td>{show.platform}</td>
                 <td>{show.season_number}</td>
                 <td>{show.number_of_episodes}</td>
+                <td>{show.platform}</td>
                 <td>
-                  <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
                   <button className="completedButton" onClick={() => handleComplete(show)}> Completed </button>
                   <button className="currentlyButton" onClick={() => handleCurrentlyWatching(show)}> Currently Watching</button>
                   <button className="dnfButton" onClick={() => handleDNF(show)}> DNF </button>
+                  <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
                   </td>
               </tr>
             ))}
