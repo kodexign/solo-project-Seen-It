@@ -31,42 +31,6 @@ function ToWatchShowsPage() {
     console.log(`handleDelete Successful: mediaId: ${show.id}, mediaType: ${mediaType}, currentStatusId: ${currentStatusId}`);
   }
 
-  // //update status to complete
-  // const handleComplete = (show) => {
-  //   const mediaId = show.id;
-  //   console.log('logging mediaId:', mediaId);
-  //   dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: { id: mediaId } });
-  //   console.log('handleComplete successful');
-
-  // };
-
-  // //update status to did not finish
-  // const handleDNF = (show) => {
-  //   const mediaId = show.id;
-  //   console.log('logging mediaId:', mediaId);
-  //   dispatch({ type: 'UPDATE_STATUS_TO_DNF', payload: { id: mediaId } });
-  //   console.log('handleComplete successful');
-
-  // };
-  // //update status to currently watching
-  // const handleCurrentlyWatching = (show) => {
-  //   const mediaId = show.id;
-  //   console.log('logging mediaId:', mediaId);
-  //   dispatch({ type: 'UPDATE_STATUS_TO_CURRENTLY_WATCHING', payload: { id: mediaId } });
-  //   console.log('handleComplete successful');
-
-  // };
-
-  // //delete media from database
-  // const handleDelete = (show) => {
-  //   const mediaId = show.id;
-  //   console.log('logging mediaId:', mediaId);
-  //   dispatch({ type: 'DELETE_MEDIA', payload: { id: mediaId } });
-  //   alert(`${show.title} has been Deleted Forever!`);
-  //   dispatch({ type: 'FETCH_TO_WATCH_SHOWS' });
-  //   console.log('handleDelete Successful, deleted :', mediaId, show.title);
-  // }
-
   
   return (
     <main>
