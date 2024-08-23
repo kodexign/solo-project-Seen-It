@@ -6,14 +6,14 @@ import './CompletedPage.css';
 
 function CompletedShowsPage() {
   const currentStatusId = 1;
-  const mediaType = 'movie';
+  const mediaType = 'show';
 
   const dispatch = useDispatch();
   const shows = useSelector(store => store.mediaReducer);
   const history = useHistory();
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_MOVIES', payload: {currentStatusId} });
+    dispatch({ type: 'FETCH_SHOWS', payload: {currentStatusId} });
   }, []);
 
    //update status
@@ -30,7 +30,6 @@ function CompletedShowsPage() {
     alert(`${show.title} has been Deleted permanently! If you want to see it on a list again, please re-add!`);
     console.log(`handleDelete Successful: mediaId: ${show.id}, mediaType: ${mediaType}, currentStatusId: ${currentStatusId}`);
   }
-
   // //update status to  to watch
   // const handleToWatch = (show) => {
   //   const mediaId = show.id;

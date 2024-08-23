@@ -17,7 +17,7 @@ pool.query(queryText, [currentStatusId])
     res.send(result.rows);
   })
   .catch(err => {
-    console.log('ERROR: Get completed-shows', err);
+    console.log('ERROR: Get shows', err);
     res.sendStatus(500)
   })
 });

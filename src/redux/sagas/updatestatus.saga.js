@@ -5,12 +5,12 @@ import axios from 'axios';
 function* updateStatus(action) {
   try {
     const { mediaId, updateStatusId, mediaType, currentStatusId } = action.payload;
-    yield axios.put(`/api/media/update-status/${mediaId}`);
+    yield axios.put(`/api/media/update-status/${mediaId}`, { updateStatusId });
 
     if (mediaType === 'movie') {
-      yield put({ type: 'FETCH_MOVIES', payload: { currentStatusId } });
+        yield put({ type: 'FETCH_MOVIES', payload: {currentStatusId} });
     } else if (mediaType === 'show') {
-      yield put({ type: 'FETCH_SHOWS', payload: { currentStatusId } });
+        yield put({ type: 'FETCH_SHOWS', payload: {currentStatusId}  });
     }
   } catch (error) {
     console.log('Error setting media to completed:', error);
@@ -73,14 +73,16 @@ function* updateStatus(action) {
 
 function* deleteMedia(action) {
   try {
-    const { mediaId, updateStatusId, mediaType, currentStatusId } = action.payload;
+    const { mediaId, mediaType, currentStatusId } = action.payload;
+
     yield axios.delete(`/api/media/${mediaId}`);
 
     if (mediaType === 'movie') {
-      yield put({ type: 'FETCH_MOVIES', payload: { currentStatusId } });
-    } else if (mediaType === 'show') {
-      yield put({ type: 'FETCH_SHOWS', payload: { currentStatusId } });
-    }
+      yield put({ type: 'FETCH_MOVIES', payload: {currentStatusId} });
+  } else if (mediaType === 'show') {
+      yield put({ type: 'FETCH_SHOWS', payload: {currentStatusId}  });
+  }
+
   } catch (error) {
     console.log('Error deleting media:', error);
   }

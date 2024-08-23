@@ -8,8 +8,8 @@ router.put('/update-status/:mediaId', (req, res) => {
 
       const queryText = `
       UPDATE media
-      SET status_id = 1
-      WHERE id = $1  
+      SET status_id = $1
+      WHERE id = $2  
       `;
 
   pool.query(queryText,[updateStatusId, mediaId])

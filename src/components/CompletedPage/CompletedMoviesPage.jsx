@@ -5,7 +5,9 @@ import { useHistory } from 'react-router-dom';
 import './CompletedPage.css';
 
 function CompletedMoviesPage() {
-
+  const currentStatusId = 1;
+  const mediaType = 'movie';
+  
   const dispatch = useDispatch();
   const movies = useSelector(store => store.mediaReducer);
   const history = useHistory();
