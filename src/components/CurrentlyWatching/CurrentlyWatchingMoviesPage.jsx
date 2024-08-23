@@ -32,41 +32,6 @@ function CurrentlyWatchingMoviesPage() {
     console.log(`handleDelete Successful: mediaId: ${movie.id}, mediaType: ${mediaType}, currentStatusId: ${currentStatusId}`);
   }
 
-  // //update status to complete
-  // const handleComplete = (movie) => {
-  //   const mediaId = movie.id;
-  //   console.log('logging mediaId:', mediaId);
-  //   dispatch({ type: 'UPDATE_STATUS_TO_COMPLETED', payload: { id: mediaId } });
-  //   console.log('handleComplete successful');
-
-  // };
-
-  // //update status to  to watch
-  // const handleToWatch = (movie) => {
-  //   const mediaId = movie.id;
-  //   console.log('logging mediaId:', mediaId);
-  //   dispatch({ type: 'UPDATE_STATUS_TO_WATCH', payload: { id: mediaId } });
-  //   console.log('handleComplete successful');
-
-  // };
-  // //update status to did not finish
-  // const handleDNF = (movie) => {
-  //   const mediaId = movie.id;
-  //   console.log('logging mediaId:', mediaId);
-  //   dispatch({ type: 'UPDATE_STATUS_TO_DNF', payload: { id: mediaId } });
-  //   console.log('handleComplete successful');
-
-  // };
-
-  // //delete media from database
-  // const handleDelete = (movie) => {
-  //   const mediaId = movie.id;
-  //   console.log('logging mediaId:', mediaId);
-  //   dispatch({ type: 'DELETE_MEDIA', payload: { id: mediaId } });
-  //   alert(`${movie.title} has been Deleted Forever!`);
-  //   console.log('handleDelete Successful, deleted :', mediaId, movie.title);
-  // };
-
   return (
     <main>
       <div className="container">
