@@ -9,9 +9,9 @@ function* fetchMovies(action) {
     console.log (`GET /api/media/movies/${currentStatusId} response`, response.data);
     yield put({ type: 'SET_MEDIA' , payload: response.data});
   } catch (error) {
-    console.error (`Error fetcthing` , error);
+    console.error(`Error fetching /api/media/movies/${currentStatusId}`, error);
     yield put ({type: 'CLEAR_MEDIA'});
-    alert('Something went fron with fetching movies');
+    alert('Something went with fetching movies');
   }
 }
 
