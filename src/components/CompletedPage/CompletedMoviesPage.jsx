@@ -13,7 +13,7 @@ function CompletedMoviesPage() {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_COMPLETED_MOVIES' });
+    dispatch({ type: 'FETCH_MOVIES', payload: {currentStatusId} });
   }, []);
 
    //update status

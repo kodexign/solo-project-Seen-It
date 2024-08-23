@@ -13,7 +13,7 @@ function CurrentlyWatchingShowsPage() {
   const history = useHistory();
   
   useEffect(() => {
-    dispatch({ type: 'FETCH_CURRENT_SHOWS' }); // type is from movies.saga.js
+    dispatch({ type: 'FETCH_SHOWS', payload: {currentStatusId} }); // type is from movies.saga.js
   }, []);
 //update status
 const handleUpdate = (mediaId, updateStatusId) => {
