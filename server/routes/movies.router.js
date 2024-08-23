@@ -10,7 +10,7 @@ router.get('/movies/:currentStatusId', (req, res) => {
   SELECT media.id, media.title, media.platform 
   FROM media
   JOIN status ON media.status_id = status.id
-  WHERE media.movie = true AND status.type = 'completed' 
+  WHERE media.movie = true AND status.id = $1
   ORDER BY media.title ASC;
   `;
 pool.query(queryText, [currentStatusId])
