@@ -133,14 +133,14 @@ input {
 Media Pages Table
 -------------------------------------------------------------------------------- */
 table{
+  align-self: center;
   box-sizing: border-box;
   display: block;
   width: 80%;
   height: 400px;
   overflow: scroll;
   padding: 25px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   background-color: #6c69693f;
   border-style: groove;
   border-color: white;
@@ -148,6 +148,8 @@ table{
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.347);
   font-size: 12pt;
   text-align: center;
+  table-layout: fixed;
+
 
 
 }
@@ -172,7 +174,17 @@ th{
 td{
   padding: 10px;
   margin: 10px;
-
+  
+}
+.list{
+  display: flex;
+  justify-content: center;
+}
+.tdTitle{
+  width: 180px;
+}
+.tdButton{
+  width: 300px;
 }
 /* --------------------------------------------------------------------------------
 Media Pages: Status Change Buttons
@@ -180,6 +192,7 @@ Media Pages: Status Change Buttons
 .toWatchButton{
   display: inline-block;
   padding: 5px;
+  margin: 2px;
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 45px;
@@ -197,6 +210,7 @@ Media Pages: Status Change Buttons
 .completedButton{
   display: inline-block;
   padding: 5px;
+  margin: 2px;
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 45px;
@@ -214,6 +228,7 @@ Media Pages: Status Change Buttons
 .dnfButton{
   display: inline-block;
   padding: 5px;
+  margin: 2px;
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 45px;
@@ -230,6 +245,7 @@ Media Pages: Status Change Buttons
 .currentlyButton{
   display: inline-block;
   padding: 5px;
+  margin: 2px;
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 45px;
@@ -247,6 +263,7 @@ Media Pages: Status Change Buttons
 .deleteButton{
   display: inline-block;
   padding: 5px;
+  margin: 2px;
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 45px;

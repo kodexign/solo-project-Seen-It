@@ -37,6 +37,7 @@ function CompletedMoviesPage() {
         <div>
           <h2 className='page-title'>Completed Movies</h2>
         </div>
+        <div className='list'>
         <table className='table'>
           <thead>
             <tr>
@@ -48,9 +49,9 @@ function CompletedMoviesPage() {
           <tbody>
             {movies.map(movie => (
               <tr key={movie.id}>
-                <td>{movie.title}</td>
+                <td className='tdTitle'>{movie.title}</td>
                 <td>{movie.platform}</td>
-                <td>
+                <td className='tdButton'>
                   <button className="toWatchButton" onClick={() => handleUpdate(movie.id, 3)}> To Watch</button>
                   <button className="currentlyButton" onClick={() => handleUpdate(movie.id, 2)}>Watching</button>
                   <button className="dnfButton" onClick={() => handleUpdate(movie.id, 4)}> DNF </button>
@@ -61,7 +62,7 @@ function CompletedMoviesPage() {
           </tbody>
         </table>
 
-
+        </div>
       </div>
     </main>
   );

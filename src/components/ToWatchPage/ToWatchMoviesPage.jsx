@@ -50,9 +50,9 @@ const handleDelete = (movie) =>{
           <tbody>
             {movies.map(movie => (
               <tr key={movie.id}>
-                <td>{movie.title}</td>
+                <td className='tdTitle'>{movie.title}</td>
                 <td>{movie.platform}</td>
-                <td>
+                <td className='tdButton'>
                   <button className="completedButton" onClick={() => handleUpdate(movie.id, 1)}> Completed </button>
                   <button className="currentlyButton" onClick={() => handleUpdate(movie.id, 2)}>Watching</button>
                   <button className="dnfButton" onClick={() => handleUpdate(movie.id, 4)}> DNF </button>

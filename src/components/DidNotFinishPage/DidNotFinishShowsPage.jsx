@@ -43,7 +43,7 @@ const handleDelete = (show) => {
             <tr>
               <th>Title</th>
               <th>Season</th>
-              <th># of Eps</th>
+              <th>#of Eps</th>
               <th>Platform</th>
               <th>Update Status</th>
             </tr>
@@ -51,11 +51,11 @@ const handleDelete = (show) => {
           <tbody>
             {shows.map(show => (
               <tr key={show.id}>
-                <td>{show.title}</td>
+                <td className='tdTitle'>{show.title}</td>
                 <td>{show.season_number}</td>
                 <td>{show.number_of_episodes}</td>
                 <td>{show.platform}</td>
-                <td>
+                <td className='tdButton'>
                   <button className="toWatchButton" onClick={() => handleUpdate(show.id, 3)}> To Watch</button>
                   <button className="completedButton" onClick={() => handleUpdate(show.id, 1)}> Completed </button>
                   <button className="currentlyButton" onClick={() => handleUpdate(show.id, 2)}> Watching</button>

@@ -49,9 +49,9 @@ return (
           <tbody>
             {movies.map(movie => (
               <tr key={movie.id}>
-                <td>{movie.title}</td>
+                <td className='tdTitle'>{movie.title}</td>
                 <td>{movie.platform}</td>
-                <td>
+                <td className='tdButton'>
               <button className="toWatchButton" onClick={() => handleUpdate(movie.id, 3)}> To Watch</button>
               <button className="completedButton" onClick={() =>handleUpdate(movie.id, 1)}> Completed </button>
               <button className="currentlyButton" onClick={() =>handleUpdate(movie.id, 2)}>Watching</button>
