@@ -72,7 +72,7 @@ const handleDelete = (show) => {
     <main>
       <div className="container">
         <div>
-        <h2 className='page-title'>Did Not Finish Shows <br />(DNF)</h2>
+        <h2 className='page-title'>Did Not Finish Shows (DNF)</h2>
         </div>
         <table className='table'>
           <thead>

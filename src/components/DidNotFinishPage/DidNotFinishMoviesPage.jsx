@@ -71,7 +71,7 @@ return (
   <main>
   <div className="container">
     <div>
-    <h2 className='page-title'>Did Not Finish -DNF- Movies List</h2>
+    <h2 className='page-title'>Did Not Finish Movies(DNF)</h2>
     </div>
 
     <table className='table'>
