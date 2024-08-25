@@ -162,6 +162,7 @@ table{
   text-decoration-color: #81d5fce3;
   text-align: center;
   color:#d0dce4;
+  font-size: 30pt;
 }
 
 th{
@@ -214,7 +215,7 @@ Media Pages: Status Change Buttons
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 45px;
-  background-color: #00c29e64;
+  background-color: #7a7a7a;
   color: #f8f8f8;
   font-size: .8rem;
   outline: 0;
@@ -232,7 +233,7 @@ Media Pages: Status Change Buttons
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 45px;
-  background-color: #7a7a7a;
+  background-color: #e6c12fae;
   color: #f8f8f8;
   font-size: .8rem;
   outline: 0;
@@ -249,7 +250,7 @@ Media Pages: Status Change Buttons
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 45px;
-  background-color: #e6c12fae;
+  background-color: #00c29e64;
   color: #f8f8f8;
   font-size: .8rem;
   outline: 0;

@@ -2,7 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './CompletedPage.css';
 import { useHistory } from 'react-router-dom';
-import './CompletedPage.css';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import StopIcon from '@mui/icons-material/Stop';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import FastForwardIcon from '@mui/icons-material/FastForward';
+
 
 function CompletedShowsPage() {
   const currentStatusId = 1;
@@ -35,10 +40,10 @@ function CompletedShowsPage() {
     <main>
       <div className="container">
         <div>
-          <h2 className='page-title'>Completed Shows</h2>
+          <h2 className='page-title-complete'><StopIcon fontSize='large'></StopIcon>Completed Shows<StopIcon fontSize='large'></StopIcon></h2>
         </div>
 
-        <div className='list'>
+        <div className='complete-list'>
           <table className='table'>
             <thead>
               <tr>
@@ -57,10 +62,12 @@ function CompletedShowsPage() {
                   <td>{show.number_of_episodes}</td>
                   <td>{show.platform}</td>
                   <td className='tdButton'>
-                    <button className="toWatchButton" onClick={() => handleUpdate(show.id, 3)}> To Watch</button>
-                    <button className="currentlyButton" onClick={() => handleUpdate(show.id, 2)}>Watching</button>
-                    <button className="dnfButton" onClick={() => handleUpdate(show.id, 4)}> DNF </button>
-                    <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
+                    <button className="toWatchButton" title='To Watch' onClick={() => handleUpdate(show.id, 3)}> <FastForwardIcon></FastForwardIcon>
+                    </button>
+                    <button className="currentlyButton" title='Currently Watching' onClick={() => handleUpdate(show.id, 2)}><PlayArrowIcon></PlayArrowIcon></button>
+                    <button className="dnfButton" title='DidNotFinish' onClick={() => handleUpdate(show.id, 4)}> <PauseIcon></PauseIcon> </button>
+                    <button className="deleteButton" title='Delete' onClick={() => handleDelete(show)}> <DeleteOutlineIcon></DeleteOutlineIcon> </button>
+                    
                   </td>
                 </tr>
               ))}
@@ -69,6 +76,7 @@ function CompletedShowsPage() {
         </div>
       </div>
     </main>
+    
   );
 }
 

@@ -1,5 +1,14 @@
-.page-title{
+.page-title-complete {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #7a7a7a;
     text-align: center;
-    text-decoration: underline;
+    color: #d0dce4;
     font-size: 30pt;
 }
+.complete-list{
+    display: flex;
+    justify-content: center;
+    border-color: #7a7a7a;
+    
+  }

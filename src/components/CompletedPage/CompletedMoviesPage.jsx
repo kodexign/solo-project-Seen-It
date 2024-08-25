@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './CompletedPage.css';
 import { useHistory } from 'react-router-dom';
 import './CompletedPage.css';
+import StopIcon from '@mui/icons-material/Stop';
 
 function CompletedMoviesPage() {
   const currentStatusId = 1;
@@ -35,9 +36,9 @@ function CompletedMoviesPage() {
     <main>
       <div className="container">
         <div>
-          <h2 className='page-title'>Completed Movies</h2>
+          <h2 className='page-title-complete'><StopIcon fontSize='large'></StopIcon>Completed Movies<StopIcon fontSize='large'></StopIcon></h2>
         </div>
-        <div className='list'>
+        <div className='complete-list'>
         <table className='table'>
           <thead>
             <tr>

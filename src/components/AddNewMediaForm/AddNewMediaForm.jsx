@@ -53,8 +53,8 @@ function AddNewMediaForm() {
 
         setTitle('');
         setMovie('select');
-        setSeasonNum('');
-        setNumOfEps('');
+        setSeasonNum(0);
+        setNumOfEps(0);
         setPlatform('');
         setUserId(user.id);
         setStatus('select'); // clears input form
@@ -102,7 +102,7 @@ function AddNewMediaForm() {
                         Season Number:
                         <br />
                         <input
-                            type="text"
+                            type="number"
                             name="seasonNumber"
                             placeholder='Season Number'
                             value={seasonNum}

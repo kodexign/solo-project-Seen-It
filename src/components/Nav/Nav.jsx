@@ -3,20 +3,19 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useDispatch, useSelector } from 'react-redux';
-
+import StopIcon from '@mui/icons-material/Stop';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import FastForwardIcon from '@mui/icons-material/FastForward';
 function Nav() {
   const user = useSelector((store) => store.user);
 
-  const dispatch = useDispatch();
 
-  const clearMedia = () => {
-    dispatch({ type: 'CLEAR_MEDIA' });
-  }
 
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Seen<span style={{ color: '#08b1ff' }}>It!</span> </h2>
+        <h2 className="nav-title">Seen<span style={{ color: '#08b1ff' }}>It!</span></h2>
       </Link>
       <div>
      
@@ -48,16 +47,23 @@ function Nav() {
 
               <div className="dropdown-content">
                 <Link className="navLink" to="/completed-shows" >
-                  Completed
+                  Completed 
+                  <br /><StopIcon fontSize='small'></StopIcon>
                 </Link>
+
                 <Link className="navLink" to="/currently-watching-shows" >
-                  Currently Watching
+                  Currently Watching 
+                  <br /><PlayArrowIcon fontSize='small'></PlayArrowIcon>
                 </Link>
+
                 <Link className="navLink" to="/to-watch-shows" >
-                  To Watch
+                 To Watch 
+                 <br /><FastForwardIcon></FastForwardIcon> 
                 </Link>
+
                 <Link className="navLink" to="/did-not-finish-shows" >
-                  Did Not Finish
+                  Did Not Finish 
+                  <br /><PauseIcon fontSize='small'></PauseIcon>
                 </Link>
               </div>
             </div>
@@ -69,16 +75,23 @@ function Nav() {
               
               <div className="dropdown-content">
                 <Link className="navLink" to="/completed-movies">
-                  Completed
+                Completed 
+                <br /><StopIcon fontSize='small'></StopIcon>
                 </Link>
+
                 <Link className="navLink" to="/currently-watching-movies" >
-                  Currently Watching
+                Currently Watching 
+                <br /><PlayArrowIcon fontSize='small'></PlayArrowIcon>
                 </Link>
+
                 <Link className="navLink" to="/to-watch-movies" >
-                  To Watch
+                To Watch 
+                <br /><FastForwardIcon></FastForwardIcon>
                 </Link>
+
                 <Link className="navLink" to="/did-not-finish-movies" >
-                  Did Not Finish
+                Did Not Finish 
+                <br /><PauseIcon fontSize='small'></PauseIcon>
                 </Link>
               </div>
             </div>
