@@ -10,7 +10,7 @@ function AddNewMediaForm() {
     const [movie, setMovie] = useState('select');
     const [seasonNum, setSeasonNum] = useState(0);
     const [numOfEps, setNumOfEps] = useState(0);
-    const [platform, setPlatform] = useState('');
+    const [platform, setPlatform] = useState('0');
     const [userId, setUserId] = useState(user.id);
     const [status, setStatus] = useState('select');
 

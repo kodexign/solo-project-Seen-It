@@ -26,8 +26,8 @@ function UserPage() {
     <div className="container">
 
       <div className='welcome'>
-        <h1>Dashboard</h1>
-        <h2>Welcome, {user.first_name}!</h2>
+        <h1 className='dash-h1'>Dashboard</h1>
+        <h2 className=' dash-h2'>Welcome, {user.first_name}!</h2>
 
       </div>
       <div className="dashboard">

@@ -19,6 +19,7 @@
     float: left;
     position: relative;
     background-color: rgba(0, 0, 0, 0.584);
+    font-family: 'Mooli', sans-serif;
 }
 
 .add-new-link {
@@ -29,10 +30,20 @@
 
 
 
-h1 {
-    text-decoration: underline;
+.dash-h1{
+    text-align: center;
+    color: #d0dce4;
+    font-size: 35pt;
+    font-family: 'Dancing Script Variable', cursive;
+    font-family: 'Bungee Outline', system-ui;
+}
+
+.dash-h2{
+    font-family: 'Dancing Script Variable', cursive;
+    font-size: 25pt;
 }
 
 h3 {
     text-decoration: underline;
+    font-family: 'Source Sans Pro', sans-serif;
 }
