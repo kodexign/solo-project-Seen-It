@@ -1,10 +1,11 @@
 .page-title-complete {
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: #7a7a7a;
+    /* text-decoration-line: underline;
+    text-decoration-color: #7a7a7a; */
     text-align: center;
     color: #d0dce4;
-    font-size: 30pt;
+    font-size: 35pt;
+    font-family: 'Dancing Script Variable', cursive;
+    
 }
 .complete-list{
     display: flex;

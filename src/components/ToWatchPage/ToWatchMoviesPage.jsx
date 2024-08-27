@@ -42,10 +42,10 @@ const handleDelete = (movie) =>{
       <div className="container">
       <div>
         <h2 className='page-title-to-watch'>
-          <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button> To Watch Movies<button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button></h2>
+          <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button> To Watch Movies <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button></h2>
         </div>
         
-        <div className='complete-list'>
+        <div className='to-watch-list'>
         <table className='table'>
           <thead>
             <tr>

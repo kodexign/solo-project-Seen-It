@@ -1,10 +1,8 @@
 .page-title-to-watch {
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: #0084c29d;;
     text-align: center;
     color: #d0dce4;
-    font-size: 30pt;
+    font-size: 35pt;
+    font-family: 'Dancing Script Variable', cursive;
 }
 .to-watch-list{
     display: flex;

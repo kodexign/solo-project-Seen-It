@@ -45,7 +45,7 @@ function ToWatchShowsPage() {
           <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button> To Watch Shows <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button></h2>
         </div>
 
-        <div className='complete-list'>
+        <div className='to-watch-list'>
         <table className='table'>
           <thead>
             <tr>

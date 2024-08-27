@@ -1,10 +1,8 @@
 .page-title-dnf {
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: #e6c12fae;
     text-align: center;
     color: #d0dce4;
-    font-size: 30pt;
+    font-size: 35pt;
+    font-family: 'Dancing Script Variable', cursive;
 }
 .dnf-list{
     display: flex;

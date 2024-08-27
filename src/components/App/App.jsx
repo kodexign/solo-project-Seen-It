@@ -31,6 +31,12 @@ import ToWatchShowsPage from '../ToWatchPage/ToWatchShowsPage';
 import DidNotFinishMoviesPage from '../DidNotFinishPage/DidNotFinishMoviesPage';
 import DidNotFinishShowsPage from '../DidNotFinishPage/DidNotFinishShowsPage';
 
+import '@fontsource-variable/dancing-script';
+import '@fontsource/swanky-and-moo-moo';
+import '@fontsource/bungee-outline';
+import '@fontsource/source-sans-pro';
+import '@fontsource/mooli';
+
 import './App.css';
 
 function App() {

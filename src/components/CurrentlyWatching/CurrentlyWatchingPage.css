@@ -1,11 +1,11 @@
 .page-title-watching {
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: #00c29e64;
+    /* text-decoration-line: underline;
+    text-decoration-color: #00c29e64; */
     border-radius: 15pt;
     text-align: center;
     color: #d0dce4;
-    font-size: 30pt;
+    font-size: 35pt;
+    font-family: 'Dancing Script Variable', cursive;
 }
 .complete-list{
     display: flex;
