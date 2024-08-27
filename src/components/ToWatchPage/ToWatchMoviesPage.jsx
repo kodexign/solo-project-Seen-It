@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './ToWatchPage.css';
 import { useHistory } from 'react-router-dom';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import StopIcon from '@mui/icons-material/Stop';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import FastForwardIcon from '@mui/icons-material/FastForward';
 
 function ToWatchMoviesPage() {
 
@@ -35,10 +40,12 @@ const handleDelete = (movie) =>{
   return (
     <main>
       <div className="container">
-        <div>
-          <h2 className='page-title'>To Watch Movies List</h2>
+      <div>
+        <h2 className='page-title-to-watch'>
+          <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button> To Watch Movies<button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button></h2>
         </div>
-
+        
+        <div className='complete-list'>
         <table className='table'>
           <thead>
             <tr>
@@ -53,16 +60,16 @@ const handleDelete = (movie) =>{
                 <td className='tdTitle'>{movie.title}</td>
                 <td>{movie.platform}</td>
                 <td className='tdButton'>
-                  <button className="completedButton" onClick={() => handleUpdate(movie.id, 1)}> Completed </button>
-                  <button className="currentlyButton" onClick={() => handleUpdate(movie.id, 2)}>Watching</button>
-                  <button className="dnfButton" onClick={() => handleUpdate(movie.id, 4)}> DNF </button>
-                  <button className="deleteButton" onClick={() => handleDelete(movie)}> Delete </button>
+                <button className="completedButton" title = 'Completed' onClick={() => handleUpdate(movie.id, 1)}> <StopIcon></StopIcon></button>
+                  <button className="currentlyButton" title = 'Currently Watching' onClick={() => handleUpdate(movie.id, 2)}> <PlayArrowIcon></PlayArrowIcon></button>
+                  <button className="dnfButton" title = 'Did Not Finish' onClick={() => handleUpdate(movie.id, 4)}><PauseIcon></PauseIcon></button>
+                  <button className="deleteButton" title = 'Delete' onClick={() => handleDelete(movie)}> <DeleteOutlineIcon></DeleteOutlineIcon> </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-
+        </div>
       </div>
     </main>
   );
