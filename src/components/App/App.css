@@ -132,12 +132,12 @@ input {
 /* --------------------------------------------------------------------------------
 Media Pages Table
 -------------------------------------------------------------------------------- */
-table{
+table {
   align-self: center;
   box-sizing: border-box;
   display: block;
   width: 80%;
-  height: 80%;
+  height: 500px;
   overflow: scroll;
   padding: 30px;
   margin: auto;
@@ -150,19 +150,21 @@ table{
   text-align: center;
   table-layout: fixed;
 }
+
 .table::-webkit-scrollbar {
   display: none;
 }
-.page-title{
+
+.page-title {
   text-decoration-line: underline;
   text-decoration-style: wavy;
   text-decoration-color: #81d5fce3;
   text-align: center;
-  color:#d0dce4;
+  color: #d0dce4;
   font-size: 30pt;
 }
 
-th{
+th {
   color: rgb(194, 225, 253);
   text-decoration-line: underline;
   padding: 10px;
@@ -170,33 +172,38 @@ th{
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.25rem;
 }
-td{
+
+td {
   padding: 10px;
   margin: 10px;
   font-family: 'Mooli', sans-serif;
   font-size: 1rem;
   width: 100px;
-  
-  
+
+
 }
-.list{
+
+.list {
   display: flex;
   justify-content: center;
 }
-.tdTitle{
+
+.tdTitle {
   width: 180px;
 }
-.td-movie-title{
+
+.td-movie-title {
   width: 250px;
 }
 
-.tdButton{
+.tdButton {
   width: 250px;
 }
+
 /* --------------------------------------------------------------------------------
 Media Pages: Status Change Buttons
 -------------------------------------------------------------------------------- */
-.toWatchButton{
+.toWatchButton {
   display: inline-block;
   padding: 5px;
   margin: 2px;
@@ -209,12 +216,13 @@ Media Pages: Status Change Buttons
   outline: 0;
   cursor: pointer;
 }
+
 .toWatchButton:hover {
   background-color: #000000;
   text-decoration: none;
 }
 
-.completedButton{
+.completedButton {
   display: inline-block;
   padding: 5px;
   margin: 2px;
@@ -227,12 +235,13 @@ Media Pages: Status Change Buttons
   outline: 0;
   cursor: pointer;
 }
+
 .completedButton:hover {
   background-color: #000000;
   text-decoration: none;
 }
 
-.dnfButton{
+.dnfButton {
   display: inline-block;
   padding: 5px;
   margin: 2px;
@@ -245,11 +254,13 @@ Media Pages: Status Change Buttons
   outline: 0;
   cursor: pointer;
 }
+
 .dnfButton:hover {
   background-color: #000000;
   text-decoration: none;
 }
-.currentlyButton{
+
+.currentlyButton {
   display: inline-block;
   padding: 5px;
   margin: 2px;
@@ -262,12 +273,13 @@ Media Pages: Status Change Buttons
   outline: 0;
   cursor: pointer;
 }
+
 .currentlyButton:hover {
   background-color: #000000;
   text-decoration: none;
 }
 
-.deleteButton{
+.deleteButton {
   display: inline-block;
   padding: 5px;
   margin: 2px;
@@ -280,6 +292,7 @@ Media Pages: Status Change Buttons
   outline: 0;
   cursor: pointer;
 }
+
 .deleteButton:hover {
   background-color: #000000;
   text-decoration: none;

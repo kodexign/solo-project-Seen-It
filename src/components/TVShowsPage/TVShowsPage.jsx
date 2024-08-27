@@ -8,7 +8,7 @@ function TVShowsPage() {
   return (
     <div className="container">
       <div>
-        <p>TVShowsPAge</p>
+        <p>TV Shows Page Under Construction</p>
       </div>
     </div>
   );

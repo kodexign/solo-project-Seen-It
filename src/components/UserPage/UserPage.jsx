@@ -24,19 +24,21 @@ function UserPage() {
 
   return (
     <div className="container">
-      
+
       <div className='welcome'>
         <h1>Dashboard</h1>
-      <h2>Welcome, {user.first_name}!</h2>
-       
+        <h2>Welcome, {user.first_name}!</h2>
+
       </div>
       <div className="dashboard">
         <div>
-        <div className='add-new-link'>
+
+          <div className='add-new-link'>
             <Link className="navLink" to="/addnewmediaform">
               Add New
             </Link>
           </div>
+
           <div className='currently-watching'>
             <h3>Currently Watching</h3>
             <section className="three-current">
@@ -63,8 +65,8 @@ function UserPage() {
             </section>
           </div>
         </div>
-        </div>
       </div>
+    </div>
 
   );
 }

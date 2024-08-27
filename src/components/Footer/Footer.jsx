@@ -7,7 +7,7 @@ import './Footer.css';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 function Footer() {
-  return <footer>&copy; kodexign X Prime Digital Academy</footer>;
+  return <footer>&copy; kalia X Prime Digital Academy</footer>;
 }
 
 export default Footer;

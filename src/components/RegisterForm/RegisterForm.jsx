@@ -31,7 +31,7 @@ function RegisterForm() {
           {errors.registrationMessage}
         </h3>
       )}
-            <div>
+      <div>
         <label htmlFor="firstname">
           First Name:
           <input

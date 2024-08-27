@@ -18,10 +18,10 @@ function DidNotFinishShowsPage() {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_SHOWS', payload: {currentStatusId} });
+    dispatch({ type: 'FETCH_SHOWS', payload: { currentStatusId } });
   }, []);
 
- //update status to complete
+  //update status to complete
   //update status
   const handleUpdate = (mediaId, updateStatusId) => {
     console.log('logging mediaId:', mediaId);
@@ -29,49 +29,49 @@ function DidNotFinishShowsPage() {
     console.log(`handleUpdate successful: mediaId: ${mediaId}, updateStatusId: ${updateStatusId}, mediaType: ${mediaType}, currentStatusId: ${currentStatusId}`);
   };
 
-//delete media from database
-const handleDelete = (show) => {
-  console.log('logging mediaId:', show.id);
-  dispatch({ type: 'DELETE_MEDIA', payload: { mediaId: show.id, mediaType: mediaType, currentStatusId } });
-  alert(`${show.title} has been Deleted permanently! If you want to see it on a list again, please re-add!`);
-  console.log(`handleDelete Successful: mediaId: ${show.id}, mediaType: ${mediaType}, currentStatusId: ${currentStatusId}`);
-}
+  //delete media from database
+  const handleDelete = (show) => {
+    console.log('logging mediaId:', show.id);
+    dispatch({ type: 'DELETE_MEDIA', payload: { mediaId: show.id, mediaType: mediaType, currentStatusId } });
+    alert(`${show.title} has been Deleted permanently! If you want to see it on a list again, please re-add!`);
+    console.log(`handleDelete Successful: mediaId: ${show.id}, mediaType: ${mediaType}, currentStatusId: ${currentStatusId}`);
+  }
 
   return (
     <main>
       <div className="container">
         <div>
-        <h2 className='page-title-dnf'><button className="dnfButton"> <PauseIcon></PauseIcon> </button> Did Not Finish Shows (DNF) <button className="dnfButton"> <PauseIcon></PauseIcon> </button></h2>
-    </div>
-    
-    <div className='dnf-list'>
-        <table className='table'>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Season</th>
-              <th>#of Eps</th>
-              <th>Platform</th>
-              <th>Update Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {shows.map(show => (
-              <tr key={show.id}>
-                <td className='tdTitle'>{show.title}</td>
-                <td>{show.season_number}</td>
-                <td>{show.number_of_episodes}</td>
-                <td>{show.platform}</td>
-                <td className='tdButton'>
-                <button className="toWatchButton" title='To Watch' onClick={() => handleUpdate(show.id, 3)}> <FastForwardIcon></FastForwardIcon></button>
-              <button className="completedButton" title='Completed' onClick={() =>handleUpdate(show.id, 1)}> <StopIcon></StopIcon> </button>
-              <button className="currentlyButton" title='Currently Watching' onClick={() =>handleUpdate(show.id, 2)}><PlayArrowIcon></PlayArrowIcon></button>
-              <button className="deleteButton" title='Delete' onClick={() => handleDelete(show)}> <DeleteOutlineIcon> </DeleteOutlineIcon> </button>
-                </td>
+          <h2 className='page-title-dnf'><button className="dnfButton"> <PauseIcon></PauseIcon> </button> Did Not Finish Shows (DNF) <button className="dnfButton"> <PauseIcon></PauseIcon> </button></h2>
+        </div>
+
+        <div className='dnf-list'>
+          <table className='table'>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Season</th>
+                <th>#of Eps</th>
+                <th>Platform</th>
+                <th>Update Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {shows.map(show => (
+                <tr key={show.id}>
+                  <td className='tdTitle'>{show.title}</td>
+                  <td>{show.season_number}</td>
+                  <td>{show.number_of_episodes}</td>
+                  <td>{show.platform}</td>
+                  <td className='tdButton'>
+                    <button className="toWatchButton" title='To Watch' onClick={() => handleUpdate(show.id, 3)}> <FastForwardIcon></FastForwardIcon></button>
+                    <button className="completedButton" title='Completed' onClick={() => handleUpdate(show.id, 1)}> <StopIcon></StopIcon> </button>
+                    <button className="currentlyButton" title='Currently Watching' onClick={() => handleUpdate(show.id, 2)}><PlayArrowIcon></PlayArrowIcon></button>
+                    <button className="deleteButton" title='Delete' onClick={() => handleDelete(show)}> <DeleteOutlineIcon> </DeleteOutlineIcon> </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </main>

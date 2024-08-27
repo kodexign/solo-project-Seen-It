@@ -18,7 +18,7 @@ function ToWatchShowsPage() {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_SHOWS', payload: {currentStatusId} });
+    dispatch({ type: 'FETCH_SHOWS', payload: { currentStatusId } });
   }, []);
 
   //update status
@@ -36,44 +36,44 @@ function ToWatchShowsPage() {
     console.log(`handleDelete Successful: mediaId: ${show.id}, mediaType: ${mediaType}, currentStatusId: ${currentStatusId}`);
   }
 
-  
+
   return (
     <main>
       <div className="container">
         <div>
-        <h2 className='page-title-to-watch'>
-          <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button> To Watch Shows <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button></h2>
+          <h2 className='page-title-to-watch'>
+            <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button> To Watch Shows <button className="toWatchButton"> <FastForwardIcon></FastForwardIcon></button></h2>
         </div>
 
         <div className='to-watch-list'>
-        <table className='table'>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Season</th>
-              <th>#of Eps</th>
-              <th>Platform</th>
-              <th>Update Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {shows.map(show => (
-              <tr key={show.id}>
-                <td className='tdTitle'>{show.title}</td>
-                <td>{show.season_number}</td>
-                <td>{show.number_of_episodes}</td>
-                <td>{show.platform}</td>
-                <td className='tdButton'>
-                  <button className="completedButton" title = 'Completed' onClick={() => handleUpdate(show.id, 1)}> <StopIcon></StopIcon> </button>
-                  <button className="currentlyButton" title = 'Currently Watching' onClick={() => handleUpdate(show.id, 2)}> <PlayArrowIcon></PlayArrowIcon></button>
-                  <button className="dnfButton" title = 'Did Not Finish' onClick={() => handleUpdate(show.id, 4)}><PauseIcon></PauseIcon></button>
-                  <button className="deleteButton" title = 'Delete' onClick={() => handleDelete(show)}> <DeleteOutlineIcon></DeleteOutlineIcon> </button>
-                  </td>
+          <table className='table'>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Season</th>
+                <th>#of Eps</th>
+                <th>Platform</th>
+                <th>Update Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-</div>
+            </thead>
+            <tbody>
+              {shows.map(show => (
+                <tr key={show.id}>
+                  <td className='tdTitle'>{show.title}</td>
+                  <td>{show.season_number}</td>
+                  <td>{show.number_of_episodes}</td>
+                  <td>{show.platform}</td>
+                  <td className='tdButton'>
+                    <button className="completedButton" title='Completed' onClick={() => handleUpdate(show.id, 1)}> <StopIcon></StopIcon> </button>
+                    <button className="currentlyButton" title='Currently Watching' onClick={() => handleUpdate(show.id, 2)}> <PlayArrowIcon></PlayArrowIcon></button>
+                    <button className="dnfButton" title='Did Not Finish' onClick={() => handleUpdate(show.id, 4)}><PauseIcon></PauseIcon></button>
+                    <button className="deleteButton" title='Delete' onClick={() => handleDelete(show)}> <DeleteOutlineIcon></DeleteOutlineIcon> </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
   );

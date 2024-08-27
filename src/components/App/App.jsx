@@ -91,8 +91,8 @@ function App() {
             <AddNewMediaForm />
 
           </ProtectedRoute>
-  
-  {/* MOVIE PATHS */}
+
+          {/* MOVIE PATHS */}
           <ProtectedRoute // logged in shows MOVIES PAGE
             exact path="/moviespage"
           >
@@ -108,7 +108,7 @@ function App() {
           <ProtectedRoute // logged in shows CURRENTLY WATCHING MOVIES PAGE
             exact path="/currently-watching-movies"
           >
-            <CurrentlyWatchingMoviesPage/>
+            <CurrentlyWatchingMoviesPage />
           </ProtectedRoute>
 
           <ProtectedRoute // logged in shows TO WATCH MOVIES PAGE
@@ -123,8 +123,8 @@ function App() {
             <DidNotFinishMoviesPage />
           </ProtectedRoute>
 
-  {/* TV SHOW PATHS */}
-  
+          {/* TV SHOW PATHS */}
+
           <ProtectedRoute // logged in shows COMPLETED SHOWS PAGE
             exact path="/tvshowspage"
           >

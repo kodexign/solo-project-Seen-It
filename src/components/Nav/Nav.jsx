@@ -18,7 +18,7 @@ function Nav() {
         <h2 className="nav-title">Seen<span style={{ color: '#08b1ff' }}>It!</span></h2>
       </Link>
       <div>
-     
+
 
         {/* If no user is logged in, show these links */}
         {!user.id && (
@@ -47,22 +47,22 @@ function Nav() {
 
               <div className="dropdown-content">
                 <Link className="navLink" to="/completed-shows" >
-                  Completed 
+                  Completed
                   <br /><StopIcon fontSize='small'></StopIcon>
                 </Link>
 
                 <Link className="navLink" to="/currently-watching-shows" >
-                  Currently Watching 
+                  Currently Watching
                   <br /><PlayArrowIcon fontSize='small'></PlayArrowIcon>
                 </Link>
 
                 <Link className="navLink" to="/to-watch-shows" >
-                 To Watch 
-                 <br /><FastForwardIcon></FastForwardIcon> 
+                  To Watch
+                  <br /><FastForwardIcon></FastForwardIcon>
                 </Link>
 
                 <Link className="navLink" to="/did-not-finish-shows" >
-                  Did Not Finish 
+                  Did Not Finish
                   <br /><PauseIcon fontSize='small'></PauseIcon>
                 </Link>
               </div>
@@ -72,26 +72,26 @@ function Nav() {
               <Link className="navLink" to="/moviespage">
                 Movies
               </Link>
-              
+
               <div className="dropdown-content">
                 <Link className="navLink" to="/completed-movies">
-                Completed 
-                <br /><StopIcon fontSize='small'></StopIcon>
+                  Completed
+                  <br /><StopIcon fontSize='small'></StopIcon>
                 </Link>
 
                 <Link className="navLink" to="/currently-watching-movies" >
-                Currently Watching 
-                <br /><PlayArrowIcon fontSize='small'></PlayArrowIcon>
+                  Currently Watching
+                  <br /><PlayArrowIcon fontSize='small'></PlayArrowIcon>
                 </Link>
 
                 <Link className="navLink" to="/to-watch-movies" >
-                To Watch 
-                <br /><FastForwardIcon></FastForwardIcon>
+                  To Watch
+                  <br /><FastForwardIcon></FastForwardIcon>
                 </Link>
 
                 <Link className="navLink" to="/did-not-finish-movies" >
-                Did Not Finish 
-                <br /><PauseIcon fontSize='small'></PauseIcon>
+                  Did Not Finish
+                  <br /><PauseIcon fontSize='small'></PauseIcon>
                 </Link>
               </div>
             </div>

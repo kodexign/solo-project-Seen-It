@@ -39,7 +39,7 @@ function CompletedShowsPage() {
   return (
     <main>
       <div className="container">
-      <div>
+        <div>
           <h2 className='page-title-complete'><button className="completedButton"> <StopIcon></StopIcon></button> Completed Shows <button className="completedButton"> <StopIcon></StopIcon></button></h2>
         </div>
 
@@ -67,7 +67,7 @@ function CompletedShowsPage() {
                     <button className="currentlyButton" title='Currently Watching' onClick={() => handleUpdate(show.id, 2)}><PlayArrowIcon></PlayArrowIcon></button>
                     <button className="dnfButton" title='DidNotFinish' onClick={() => handleUpdate(show.id, 4)}> <PauseIcon></PauseIcon> </button>
                     <button className="deleteButton" title='Delete' onClick={() => handleDelete(show)}> <DeleteOutlineIcon></DeleteOutlineIcon> </button>
-                    
+
                   </td>
                 </tr>
               ))}
@@ -76,7 +76,7 @@ function CompletedShowsPage() {
         </div>
       </div>
     </main>
-    
+
   );
 }
 

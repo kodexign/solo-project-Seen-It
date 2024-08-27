@@ -4,9 +4,10 @@
     font-size: 35pt;
     font-family: 'Dancing Script Variable', cursive;
 }
-.to-watch-list{
+
+.to-watch-list {
     display: flex;
     justify-content: center;
     border-color: #7a7a7a;
-    
-  }
+
+}

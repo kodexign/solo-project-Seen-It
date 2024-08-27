@@ -8,7 +8,7 @@ function MoviesPage() {
   return (
     <div className="container">
       <div>
-        <p>MoviesPage</p>
+        <p>Movies Page Under Construction</p>
       </div>
     </div>
   );

@@ -10,11 +10,11 @@ function AboutPage() {
     <div className="container">
       <div>
         <p>Welcome!!
-          <br /> <br /> Binge smarter, and harder with SeenIt- your movie and television show tracking buddy! 
+          <br /> <br /> Binge smarter, and harder with SeenIt- your movie and television show tracking buddy!
           <br /> <br />
-          Easily keep track of TV Shows and Movies you’re watching (or not watching) by adding them into 
-          lists based on their status- Currently Watching, Completed, To Watch (for your future viewing), and Did Not Finish 
-          (for the ones you may -or may not- get back to). 
+          Easily keep track of TV Shows and Movies you’re watching (or not watching) by adding them into
+          lists based on their status- Currently Watching, Completed, To Watch (for your future viewing), and Did Not Finish
+          (for the ones you may -or may not- get back to).
           <br /><br /> Conquer your current and future watchlists and leave no cinemedia behind!
         </p>
       </div>

@@ -8,7 +8,7 @@ router.get('/recently-added', (req, res) => {
   SELECT title
   FROM media
   ORDER BY id DESC
-  LIMIT 3;
+  LIMIT 5;
 
   `;
 pool.query(queryText)
@@ -29,7 +29,7 @@ router.get('/three-current', (req, res) => {
   FROM media
   WHERE status_id = 2
   ORDER BY id DESC
-  LIMIT 3
+  LIMIT 5
   ;
 
   `;
