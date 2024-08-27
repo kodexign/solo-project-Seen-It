@@ -40,7 +40,7 @@ function CompletedMoviesPage() {
     <main>
       <div className="container">
         <div>
-          <h2 className='page-title-complete'><StopIcon fontSize='large'></StopIcon>Completed Movies<StopIcon fontSize='large'></StopIcon></h2>
+          <h2 className='page-title-complete'><button className="completedButton"> <StopIcon></StopIcon></button> Completed Movies <button className="completedButton"> <StopIcon></StopIcon></button></h2>
         </div>
         <div className='complete-list'>
         <table className='table'>

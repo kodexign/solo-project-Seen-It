@@ -41,7 +41,7 @@ const handleDelete = (show) => {
     <main>
       <div className="container">
         <div>
-        <h2 className='page-title-dnf'><button className="dnfButton"> <PauseIcon></PauseIcon> </button>Did Not Finish Movies(DNF)<button className="dnfButton"> <PauseIcon></PauseIcon> </button></h2>
+        <h2 className='page-title-dnf'><button className="dnfButton"> <PauseIcon></PauseIcon> </button> Did Not Finish Shows (DNF) <button className="dnfButton"> <PauseIcon></PauseIcon> </button></h2>
     </div>
     
     <div className='dnf-list'>

@@ -39,8 +39,8 @@ function CompletedShowsPage() {
   return (
     <main>
       <div className="container">
-        <div>
-          <h2 className='page-title-complete'><StopIcon fontSize='large'></StopIcon>Completed Shows<StopIcon fontSize='large'></StopIcon></h2>
+      <div>
+          <h2 className='page-title-complete'><button className="completedButton"> <StopIcon></StopIcon></button> Completed Shows <button className="completedButton"> <StopIcon></StopIcon></button></h2>
         </div>
 
         <div className='complete-list'>

@@ -41,7 +41,7 @@ function CurrentlyWatchingMoviesPage() {
     <main>
       <div className="container">
         <div>
-          <h2 className='page-title-watching'><PlayArrowIcon fontSize='large'></PlayArrowIcon> Currently Watching Movies List <PlayArrowIcon fontSize='large'></PlayArrowIcon></h2>
+          <h2 className='page-title-watching'><button className="currentlyButton"> <PlayArrowIcon></PlayArrowIcon></button> Currently Watching Movies <button className="currentlyButton"> <PlayArrowIcon></PlayArrowIcon></button></h2>
         </div>
 
         <table className='watching-table'>

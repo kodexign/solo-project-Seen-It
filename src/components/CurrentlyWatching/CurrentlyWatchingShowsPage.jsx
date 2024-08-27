@@ -40,9 +40,9 @@ const handleDelete = (show) => {
 return (
   <main>
   <div className="container">
-    <div>
-    <h2 className='page-title-watching'><PlayArrowIcon fontSize='large'></PlayArrowIcon> Currently Watching Shows <PlayArrowIcon fontSize='large'></PlayArrowIcon> </h2>
-    </div>
+  <div>
+          <h2 className='page-title-watching'><button className="currentlyButton"> <PlayArrowIcon></PlayArrowIcon></button> Currently Watching Shows <button className="currentlyButton"> <PlayArrowIcon></PlayArrowIcon></button></h2>
+        </div>
 
     <table className='watching-table'>
   <thead>

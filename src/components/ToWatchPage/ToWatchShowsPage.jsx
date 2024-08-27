@@ -64,7 +64,7 @@ function ToWatchShowsPage() {
                 <td>{show.number_of_episodes}</td>
                 <td>{show.platform}</td>
                 <td className='tdButton'>
-                  <button className="completedButton" title = 'Completed' onClick={() => handleUpdate(show.id, 1)}> Completed </button>
+                  <button className="completedButton" title = 'Completed' onClick={() => handleUpdate(show.id, 1)}> <StopIcon></StopIcon> </button>
                   <button className="currentlyButton" title = 'Currently Watching' onClick={() => handleUpdate(show.id, 2)}> <PlayArrowIcon></PlayArrowIcon></button>
                   <button className="dnfButton" title = 'Did Not Finish' onClick={() => handleUpdate(show.id, 4)}><PauseIcon></PauseIcon></button>
                   <button className="deleteButton" title = 'Delete' onClick={() => handleDelete(show)}> <DeleteOutlineIcon></DeleteOutlineIcon> </button>
