@@ -44,7 +44,8 @@ return (
           <h2 className='page-title-watching'><button className="currentlyButton"> <PlayArrowIcon></PlayArrowIcon></button> Currently Watching Shows <button className="currentlyButton"> <PlayArrowIcon></PlayArrowIcon></button></h2>
         </div>
 
-    <table className='watching-table'>
+    <div className='watching-table'>
+    <table className='table'>
   <thead>
     <tr>
       <th>Title</th>
@@ -71,8 +72,7 @@ return (
     ))}
   </tbody>
 </table>
-
-
+</div>
     </div>
     </main>
   );

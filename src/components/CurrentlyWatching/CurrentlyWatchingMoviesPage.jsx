@@ -44,7 +44,8 @@ function CurrentlyWatchingMoviesPage() {
           <h2 className='page-title-watching'><button className="currentlyButton"> <PlayArrowIcon></PlayArrowIcon></button> Currently Watching Movies <button className="currentlyButton"> <PlayArrowIcon></PlayArrowIcon></button></h2>
         </div>
 
-        <table className='watching-table'>
+        <div className='watching-table'>
+        <table className='table'>
           <thead>
             <tr>
               <th>Title</th>
@@ -67,7 +68,7 @@ function CurrentlyWatchingMoviesPage() {
             ))}
           </tbody>
         </table>
-
+        </div>
       </div>
     </main>
   );

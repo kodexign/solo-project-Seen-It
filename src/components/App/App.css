@@ -137,10 +137,10 @@ table{
   box-sizing: border-box;
   display: block;
   width: 80%;
-  height: 400px;
+  height: 80%;
   overflow: scroll;
-  padding: 25px;
-  margin: 0 auto;
+  padding: 30px;
+  margin: auto;
   background-color: #6c69693f;
   border-style: groove;
   border-color: white;
@@ -175,6 +175,7 @@ td{
   margin: 10px;
   font-family: 'Mooli', sans-serif;
   font-size: 1rem;
+  width: 100px;
   
   
 }
@@ -185,8 +186,12 @@ td{
 .tdTitle{
   width: 180px;
 }
+.td-movie-title{
+  width: 250px;
+}
+
 .tdButton{
-  width: 300px;
+  width: 250px;
 }
 /* --------------------------------------------------------------------------------
 Media Pages: Status Change Buttons

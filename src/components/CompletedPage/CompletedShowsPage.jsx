@@ -59,7 +59,7 @@ function CompletedShowsPage() {
                 <tr key={show.id}>
                   <td className='tdTitle'>{show.title}</td>
                   <td>{show.season_number}</td>
-                  <td>{show.number_of_episodes}</td>
+                  <td className='td-eps'>{show.number_of_episodes}</td>
                   <td>{show.platform}</td>
                   <td className='tdButton'>
                     <button className="toWatchButton" title='To Watch' onClick={() => handleUpdate(show.id, 3)}> <FastForwardIcon></FastForwardIcon>

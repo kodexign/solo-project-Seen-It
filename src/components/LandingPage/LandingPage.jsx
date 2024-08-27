@@ -15,30 +15,34 @@ function LandingPage() {
 
   return (
     <div className="container">
-      <h2>{heading}</h2>
 
       <div className="grid">
         <div className="grid-col grid-col_8">
-          <p>
-           Binge smarter, AND harder.
+         <center>
+          <p className='slogan'>
+           binge smarter, and harder.
           </p>
-
-          <p>
+           <p>
            1) Register < br/>
-           2) log in! <br />
-           3) add a new media and 
-           <br />start making lists to keep track of all the things you're watching!
+           2) Log in! <br />
+           3) Add a new movie or show add select one of the available status
+           <br />to keep track of all the things you're watching!
           </p>
-        </div>
-        <div className="grid-col grid-col_4">
-          <RegisterForm />
-
+          </center> 
+        <br />
+          <div>
           <center>
             <h4>Already a Member?</h4>
             <button className="btn btn_sizeSm" onClick={onLogin}>
               Login
             </button>
           </center>
+          </div>
+
+        </div>
+        <div className="grid-col grid-col_4">
+          <RegisterForm />
+
         </div>
       </div>
     </div>

@@ -70,7 +70,7 @@ function AddNewMediaForm() {
                 <label htmlFor="title">
                     Title:
                     <br />
-                    <input
+                    <input className='add-new-input'
                         type="text"
                         name="title"
                         placeholder='Title'
@@ -97,7 +97,7 @@ function AddNewMediaForm() {
                     <label htmlFor="seasonNum">
                         Season Number:
                         <br />
-                        <input
+                        <input className='add-new-input'
                             type="number"
                             name="seasonNumber"
                             placeholder='Season Number'
@@ -110,7 +110,7 @@ function AddNewMediaForm() {
                     <label htmlFor="numOfEps">
                         Number of Episodes:
                         <br />
-                        <input
+                        <input className='add-new-input'
                             type='number'
                             name="numOfEps"
                             placeholder='Num of Eps in Season'
@@ -124,7 +124,7 @@ function AddNewMediaForm() {
                 <label htmlFor="platform">
                     Platform:
                     <br />
-                    <input
+                    <input className='add-new-input'
                         type="text"
                         name="platform"
                         placeholder='Netflix, Hulu, other..'

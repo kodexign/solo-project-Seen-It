@@ -78,3 +78,10 @@ Grid
   flex-basis: 100%;
   max-width: 100%;
 }
+
+.slogan{
+  text-align: center;
+  color: #d0dce4;
+  font-size: 35pt;
+  font-family: 'Dancing Script Variable', cursive;
+}

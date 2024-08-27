@@ -24,7 +24,7 @@
     text-align: center;
   }
   
-  .mediaType, .statusList, input {
+  .mediaType, .statusList, .add-new-input {
     padding: auto;
     margin: auto;
     font-family: 'Mooli', sans-serif;
