@@ -3,7 +3,6 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import addNewReducer from './addnew.reducer';
 import mediaReducer from './media.reducer';
-import updateStatusReducer from './updatestatus.reducer';
 import getStatusesReducer from './getstatuses.reducer';
 import threeCurrentReducer from './threecurrent.reducer';
 import threeRecentReducer from './threerecentlyadd.reducer';
@@ -19,7 +18,6 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   addNewReducer,
   mediaReducer,
-  updateStatusReducer,
   getStatusesReducer,
   threeCurrentReducer,
   threeRecentReducer,
