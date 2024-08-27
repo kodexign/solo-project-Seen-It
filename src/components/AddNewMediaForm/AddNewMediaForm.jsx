@@ -62,12 +62,11 @@ function AddNewMediaForm() {
     };
 
     return (
-
-        <form className="formPanel" onSubmit={handleSubmit}>
-            {/* <div className='add-clapper'>clapper decor div</div> */}
-
+        <div>
+            {/* <div className='add-clapper'> </div> */}
+           <form className="formPanel" onSubmit={handleSubmit}>
             <div>
-                <h2>Add New Media Form</h2>
+                <h2 className='form-title'>Add New Media Form</h2>
                 <label htmlFor="title">
                     Title:
                     <br />
@@ -83,7 +82,7 @@ function AddNewMediaForm() {
             </div>
             <div>
                 <label htmlFor='mediaType'>
-                    Movie or TV Show
+                    Movie or TV Show:
                     <br />
                     <select className='mediaType' onChange={mediaCheck}>
                         <option value='select'> --Select One -- </option>
@@ -109,7 +108,7 @@ function AddNewMediaForm() {
                     </label>
                     <br />
                     <label htmlFor="numOfEps">
-                        Number of Episodes
+                        Number of Episodes:
                         <br />
                         <input
                             type='number'
@@ -152,6 +151,7 @@ function AddNewMediaForm() {
                 <input className="btn" type="submit" name="submit" value="Add New" />
             </div>
         </form>
+        </div>
     );
 }
 
