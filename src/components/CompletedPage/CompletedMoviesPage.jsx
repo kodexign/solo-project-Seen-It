@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import './CompletedPage.css';
 import { useHistory } from 'react-router-dom';
 import './CompletedPage.css';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import StopIcon from '@mui/icons-material/Stop';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import FastForwardIcon from '@mui/icons-material/FastForward';
 
 function CompletedMoviesPage() {
   const currentStatusId = 1;
@@ -53,10 +57,11 @@ function CompletedMoviesPage() {
                 <td className='tdTitle'>{movie.title}</td>
                 <td>{movie.platform}</td>
                 <td className='tdButton'>
-                  <button className="toWatchButton" onClick={() => handleUpdate(movie.id, 3)}> To Watch</button>
-                  <button className="currentlyButton" onClick={() => handleUpdate(movie.id, 2)}>Watching</button>
-                  <button className="dnfButton" onClick={() => handleUpdate(movie.id, 4)}> DNF </button>
-                  <button className="deleteButton" onClick={() => handleDelete(movie)}> Delete </button>
+                <button className="toWatchButton" title='To Watch' onClick={() => handleUpdate(movie.id, 3)}> <FastForwardIcon></FastForwardIcon>
+                    </button>
+                    <button className="currentlyButton" title='Currently Watching' onClick={() => handleUpdate(movie.id, 2)}><PlayArrowIcon></PlayArrowIcon></button>
+                    <button className="dnfButton" title='DidNotFinish' onClick={() => handleUpdate(movie.id, 4)}> <PauseIcon></PauseIcon> </button>
+                    <button className="deleteButton" title='Delete' onClick={() => handleDelete(movie)}> <DeleteOutlineIcon></DeleteOutlineIcon> </button>
                 </td>
               </tr>
             ))}

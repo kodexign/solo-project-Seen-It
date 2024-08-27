@@ -2,6 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './CurrentlyWatchingPage.css';
 import { useHistory } from 'react-router-dom';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import StopIcon from '@mui/icons-material/Stop';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import FastForwardIcon from '@mui/icons-material/FastForward';
+import { Pause } from '@mui/icons-material';
+
 
 function CurrentlyWatchingShowsPage() {
 
@@ -34,10 +41,10 @@ return (
   <main>
   <div className="container">
     <div>
-    <h2 className='page-title'>Currently Watching Shows </h2>
+    <h2 className='page-title-watching'><PlayArrowIcon fontSize='large'></PlayArrowIcon> Currently Watching Shows <PlayArrowIcon fontSize='large'></PlayArrowIcon> </h2>
     </div>
 
-    <table className='table'>
+    <table className='watching-table'>
   <thead>
     <tr>
       <th>Title</th>
@@ -55,10 +62,10 @@ return (
         <td>{show.number_of_episodes}</td>
         <td>{show.platform}</td>
         <td className='tdButton'>
-          <button className="toWatchButton" onClick={() => handleUpdate(show.id, 3)}>To Watch</button>
-          <button className="completedButton" onClick={() => handleUpdate(show.id, 1)}>Completed</button>
-          <button className="dnfButton" onClick={() => handleUpdate(show.id, 4)}>DNF</button>
-          <button className="deleteButton" onClick={() => handleDelete(show)}>Delete</button>
+          <button className="toWatchButton" title='To Watch' onClick={() => handleUpdate(show.id, 3)}><FastForwardIcon></FastForwardIcon></button>
+          <button className="completedButton" title='Completed' onClick={() => handleUpdate(show.id, 1)}><StopIcon></StopIcon></button>
+          <button className="dnfButton" title='DidNotFinish' onClick={() => handleUpdate(show.id, 4)}><PauseIcon></PauseIcon></button>
+          <button className="deleteButton" title='Delete' onClick={() => handleDelete(show)}><DeleteOutlineIcon></DeleteOutlineIcon></button>
         </td>
       </tr>
     ))}

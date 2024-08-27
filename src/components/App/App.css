@@ -149,9 +149,6 @@ table{
   font-size: 12pt;
   text-align: center;
   table-layout: fixed;
-
-
-
 }
 .table::-webkit-scrollbar {
   display: none;
@@ -164,13 +161,14 @@ table{
   color:#d0dce4;
   font-size: 30pt;
 }
-
+.status-key {
+  text-align: center;
+}
 th{
   color: rgb(194, 225, 253);
   text-decoration-line: underline;
   padding: 10px;
   margin: 10px;
-
 }
 td{
   padding: 10px;

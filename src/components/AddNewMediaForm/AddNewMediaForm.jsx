@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useForm } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './AddNewMediaForm.css';
 
@@ -6,14 +6,13 @@ function AddNewMediaForm() {
     const user = useSelector((store) => store.user);
 
     const dispatch = useDispatch();
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState('Connect');
     const [movie, setMovie] = useState('select');
-    const [seasonNum, setSeasonNum] = useState(0);
-    const [numOfEps, setNumOfEps] = useState(0);
-    const [platform, setPlatform] = useState('');
+    const [seasonNum, setSeasonNum] = useState(1);
+    const [numOfEps, setNumOfEps] = useState(6);
+    const [platform, setPlatform] = useState('hulu');
     const [userId, setUserId] = useState(user.id);
     const [status, setStatus] = useState('select');
-
 
     const statuses = useSelector((store) => store.getStatusesReducer);
     console.log('statuses array:', statuses);
@@ -61,8 +60,6 @@ function AddNewMediaForm() {
 
         console.log('MEDIA ADDED SUCCESSFULLY', newMedia)
     };
-
-
 
     return (
 

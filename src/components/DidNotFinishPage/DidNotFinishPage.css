@@ -1,0 +1,14 @@
+.page-title-dnf {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #e6c12fae;
+    text-align: center;
+    color: #d0dce4;
+    font-size: 30pt;
+}
+.dnf-list{
+    display: flex;
+    justify-content: center;
+    border-color: #e6c12fae;
+    
+  }

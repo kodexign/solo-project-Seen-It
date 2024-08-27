@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './DidNotFinishPage.css';
 import { useHistory } from 'react-router-dom';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import StopIcon from '@mui/icons-material/Stop';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import FastForwardIcon from '@mui/icons-material/FastForward';
 
 function DidNotFinishShowsPage() {
 
@@ -36,8 +41,10 @@ const handleDelete = (show) => {
     <main>
       <div className="container">
         <div>
-        <h2 className='page-title'>Did Not Finish Shows (DNF)</h2>
-        </div>
+        <h2 className='page-title-dnf'><button className="dnfButton"> <PauseIcon></PauseIcon> </button>Did Not Finish Movies(DNF)<button className="dnfButton"> <PauseIcon></PauseIcon> </button></h2>
+    </div>
+    
+    <div className='dnf-list'>
         <table className='table'>
           <thead>
             <tr>
@@ -56,16 +63,16 @@ const handleDelete = (show) => {
                 <td>{show.number_of_episodes}</td>
                 <td>{show.platform}</td>
                 <td className='tdButton'>
-                  <button className="toWatchButton" onClick={() => handleUpdate(show.id, 3)}> To Watch</button>
-                  <button className="completedButton" onClick={() => handleUpdate(show.id, 1)}> Completed </button>
-                  <button className="currentlyButton" onClick={() => handleUpdate(show.id, 2)}> Watching</button>
-                  <button className="deleteButton" onClick={() => handleDelete(show)}> Delete </button>
+                <button className="toWatchButton" title='To Watch' onClick={() => handleUpdate(show.id, 3)}> <FastForwardIcon></FastForwardIcon></button>
+              <button className="completedButton" title='Completed' onClick={() =>handleUpdate(show.id, 1)}> <StopIcon></StopIcon> </button>
+              <button className="currentlyButton" title='Currently Watching' onClick={() =>handleUpdate(show.id, 2)}><PlayArrowIcon></PlayArrowIcon></button>
+              <button className="deleteButton" title='Delete' onClick={() => handleDelete(show)}> <DeleteOutlineIcon> </DeleteOutlineIcon> </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-
+        </div>
       </div>
     </main>
   );
