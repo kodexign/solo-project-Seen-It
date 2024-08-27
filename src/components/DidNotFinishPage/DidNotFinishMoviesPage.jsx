@@ -38,6 +38,7 @@ function DidNotFinishMoviesPage() {
 
   return (
     <main>
+      <div className="container">
       <div>
         <h2 className='page-title-dnf'><button className="dnfButton"> <PauseIcon></PauseIcon> </button> Did Not Finish Movies (DNF) <button className="dnfButton"> <PauseIcon></PauseIcon> </button></h2>
       </div>
@@ -54,7 +55,7 @@ function DidNotFinishMoviesPage() {
           <tbody>
             {movies.map(movie => (
               <tr key={movie.id}>
-                <td className='tdTitle'>{movie.title}</td>
+                <td className='td-movie-title'>{movie.title}</td>
                 <td>{movie.platform}</td>
                 <td className='tdButton'>
                   <button className="toWatchButton" title='To Watch' onClick={() => handleUpdate(movie.id, 3)}> <FastForwardIcon></FastForwardIcon></button>
@@ -66,6 +67,7 @@ function DidNotFinishMoviesPage() {
             ))}
           </tbody>
         </table>
+      </div>
       </div>
     </main>
   );

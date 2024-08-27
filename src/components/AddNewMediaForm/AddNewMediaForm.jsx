@@ -6,11 +6,11 @@ function AddNewMediaForm() {
     const user = useSelector((store) => store.user);
 
     const dispatch = useDispatch();
-    const [title, setTitle] = useState('Connect');
+    const [title, setTitle] = useState('');
     const [movie, setMovie] = useState('select');
-    const [seasonNum, setSeasonNum] = useState(1);
-    const [numOfEps, setNumOfEps] = useState(6);
-    const [platform, setPlatform] = useState('hulu');
+    const [seasonNum, setSeasonNum] = useState(0);
+    const [numOfEps, setNumOfEps] = useState(0);
+    const [platform, setPlatform] = useState('');
     const [userId, setUserId] = useState(user.id);
     const [status, setStatus] = useState('select');
 

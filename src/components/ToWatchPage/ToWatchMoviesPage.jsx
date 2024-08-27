@@ -57,7 +57,7 @@ function ToWatchMoviesPage() {
             <tbody>
               {movies.map(movie => (
                 <tr key={movie.id}>
-                  <td className='tdTitle'>{movie.title}</td>
+                  <td className='td-movie-title'>{movie.title}</td>
                   <td>{movie.platform}</td>
                   <td className='tdButton'>
                     <button className="completedButton" title='Completed' onClick={() => handleUpdate(movie.id, 1)}> <StopIcon></StopIcon></button>
