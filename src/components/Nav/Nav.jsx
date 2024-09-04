@@ -7,6 +7,7 @@ import StopIcon from '@mui/icons-material/Stop';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import FastForwardIcon from '@mui/icons-material/FastForward';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 function Nav() {
   const user = useSelector((store) => store.user);
 
@@ -98,14 +99,13 @@ function Nav() {
             </div>
 
 
+
             <LogOutButton className="navLink" />
 
           </>
         )}
 
-        <Link className="navLink" to="/about">
-          About
-        </Link>
+       
 
       </div>
     </div>

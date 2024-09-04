@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 
 function LoginForm() {
@@ -62,7 +63,8 @@ function LoginForm() {
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
+        <input className="btn" type="submit" name="submit" title='Log In' value="Log In" /> 
+        
       </div>
     </form>
   );
