@@ -7,7 +7,7 @@ import StopIcon from '@mui/icons-material/Stop';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import FastForwardIcon from '@mui/icons-material/FastForward';
-import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import logo from './cameralogo.png';
 function Nav() {
   const user = useSelector((store) => store.user);
 
@@ -17,7 +17,7 @@ function Nav() {
     <div className="nav">
       <Link to="/home">
         <h2 className="nav-title">
-        <img height='35px' src="src/components/Nav/cameralogo.png" /> Seen<span style={{ color: '#08b1ff' }}>It!</span></h2>
+        <img height='35px' src={logo} /> Seen<span style={{ color: '#08b1ff' }}>It!</span></h2>
       </Link>
       <div>
 
