@@ -15,7 +15,8 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Seen<span style={{ color: '#08b1ff' }}>It!</span></h2>
+        <h2 className="nav-title">
+        <img height='35px' src="documentation/images/cameralogo.png" /> Seen<span style={{ color: '#08b1ff' }}>It!</span></h2>
       </Link>
       <div>
 
