@@ -17,7 +17,7 @@ function Nav() {
     <div className="nav">
       <Link to="/home">
         <h2 className="nav-title">
-        <img height='35px' src="documentation/images/cameralogo.png" /> Seen<span style={{ color: '#08b1ff' }}>It!</span></h2>
+        <img height='35px' src="src/components/Nav/cameralogo.png" /> Seen<span style={{ color: '#08b1ff' }}>It!</span></h2>
       </Link>
       <div>
 
