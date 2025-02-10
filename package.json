@@ -8,12 +8,9 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
-    "@fontsource-variable/dancing-script": "^5.0.19",
-    "@fontsource/bungee-inline": "^5.0.22",
+    "@fontsource-variable/dancing-script": "^5.0.19",,
     "@fontsource/bungee-outline": "^5.0.22",
-    "@fontsource/codystar": "^5.0.21",
     "@fontsource/mooli": "^5.0.4",
-    "@fontsource/permanent-marker": "^5.0.13",
     "@fontsource/source-sans-pro": "^5.0.8",
     "@fontsource/swanky-and-moo-moo": "^5.0.13",
     "@mui/icons-material": "^5.16.7",
