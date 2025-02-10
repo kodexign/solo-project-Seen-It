@@ -1,12 +1,9 @@
-# Prime Solo Project - Starting Repo
+Seen-It
+Seen-It is a web application that allows users to browse and keep track of movies and TV shows they have seen, want to see, or are currently watching. Users can search for their favorite titles, mark them as watched, and add them to their personalized lists for better movie management.
 
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+This project was built using React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-## Use the Template for This Repository (Don't Clone)
-
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account. Make the project `PUBLIC`!
 
 ## Prerequisites
 
@@ -18,15 +15,43 @@ Before you get started, make sure you have the following software installed on y
 
 ## Create Database and Table
 
-Create a new database called `prime_app` and create a `user` table:
+Create a new database called `prime_app` and create the following tables:
 
-```SQL
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
+    "first_name" VARCHAR NOT NULL,
+    "last_name" VARCHAR NOT NULL,
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
-```
+ 
+ CREATE TABLE "media" (
+    "id" SERIAL PRIMARY KEY,
+    "title" VARCHAR NOT NULL,
+    "movie" boolean NOT NULL,
+    "season_number" INT,
+    "number_of_episodes" INT,
+    "platform" VARCHAR,
+    "user_id" INT,
+    "status_id" INT
+   
+);
+
+
+ CREATE TABLE "status" (
+    "id" SERIAL PRIMARY KEY,
+    "type" varchar
+   
+);
+
+INSERT INTO "status" ("type" )
+VALUES
+  ('completed'),
+  ('currently_watching'),
+  ('to_watch'),
+  ('did_not_finish'
+  );
+  
 
 If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`.
 
