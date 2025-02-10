@@ -73,7 +73,7 @@ If you would like to name your database something else, you will need to change 
     - Did Not Finish 
     - Add New Media
   - Add titles to their lists
-  - update watch status of media lists or delete any titles in lists
+  - update watch status of media lists or delete any titles on their list
 
 
 ## Built With
